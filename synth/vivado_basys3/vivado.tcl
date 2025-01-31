@@ -7,7 +7,6 @@ create_project basys3 basys3 -part xc7a35tcpg236-1
 # set_property file_type {Memory File} [get_files -all]
 
 add_files -norecurse {
- ../../build/rtl.sv2v.v
  ../basys3.sv
 }
 add_files -fileset constrs_1 -norecurse {
@@ -29,7 +28,7 @@ set_property -dict [list \
 
 # Run Synthesis
 set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]
-launch_runs synth_1 -jobs [exec nproc]
+launch_runs synth_1 -jobs 4
 wait_on_run synth_1
 
 # Run PNR
