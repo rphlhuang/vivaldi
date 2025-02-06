@@ -7,6 +7,9 @@ create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L
 
 add_files -norecurse {
  ../nexysVideo.sv
+  ../../../rtl/blinky.sv
+ ../../../rtl/config_pkg.sv
+ ../../../third_party/basejump_stl/bsg_misc/bsg_counter_up_down.sv
 }
 add_files -fileset constrs_1 -norecurse {
  ../Nexys-Video-Master.xdc
@@ -39,4 +42,27 @@ wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream
 wait_on_run impl_1
 
+# Open Hardware Manager
+open_hw
+
+# Connect to the FPGA
+connect_hw_server
+open_hw_target
+
+# Set the device (Auto-detect)
+set device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false $device
+
+# Program the FPGA with the generated bitstream
+set bitstream [file normalize "nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit"]
+set_property PROGRAM.FILE $bitstream $device
+program_hw_devices $device
+
+# Close the hardware session
+close_hw_target
+disconnect_hw_server
+close_hw
+
+
+close_project
 exit
