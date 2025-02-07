@@ -5,3 +5,4 @@ __pycache__
 *gls_dir
 *.fst
 build
+.vscode/
