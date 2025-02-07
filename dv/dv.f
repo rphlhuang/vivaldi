@@ -18,3 +18,6 @@ dv/blinky_tb.sv
 -Werror-IMPLICIT
 -Werror-USERERROR
 -Werror-LATCH
+
+// for ARM Macs
+-CFLAGS -std=c++14
