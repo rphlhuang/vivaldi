@@ -1,2 +1,2 @@
 
-dv/blinky_runner.sv
+dv/amp_modulator_runner.sv
