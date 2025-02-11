@@ -1,4 +1,4 @@
-# start_gui
+start_gui
 
 create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L
 
@@ -6,11 +6,10 @@ create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L
 # set_property file_type {Memory File} [get_files -all]
 
 add_files -norecurse {
- ../nexysVideo.sv
-  ../../../rtl/blinky.sv
- ../../../rtl/config_pkg.sv
- ../../../third_party/basejump_stl/bsg_misc/bsg_counter_up_down.sv
+  ../nexysVideo.sv
 }
+add_files -norecurse [glob -nocomplain ../../../rtl/*]
+
 add_files -fileset constrs_1 -norecurse {
  ../Nexys-Video-Master.xdc
  ../constraints.xdc
@@ -64,5 +63,5 @@ disconnect_hw_server
 close_hw
 
 
-close_project
-exit
+#close_project
+#exit
