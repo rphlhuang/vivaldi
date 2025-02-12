@@ -41,6 +41,6 @@ module square_wave
   localparam real max_val_lp = (1 << (width_p - 1)) - 1;
   initial begin
     for (int i = 0; i < depth_p; i++)
-      mem[i] = i < depth_p? max_val_lp: '0;
+      mem[i] = (i < depth_p) ? max_val_lp : '0;
   end
 endmodule

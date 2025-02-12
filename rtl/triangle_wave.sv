@@ -42,6 +42,6 @@ module triangle_wave
   localparam real increment_val_lp = max_val_lp/(depth_p/2);
   initial begin
     for (int i = 0; i < depth_p; i++)
-      mem[i] = i < depth_p? i*increment_val_lp: max_val_lp -(increment_val_lp*(i-(depth_p/2)));
+      mem[i] = (i < depth_p) ? (i*increment_val_lp) : (max_val_lp -(increment_val_lp*(i-(depth_p/2))));
   end
 endmodule

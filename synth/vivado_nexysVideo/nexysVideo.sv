@@ -19,33 +19,65 @@ module nexysVideo (
 
 wire logic rst_n = btnC;
 
-logic clk_50;
-mmcm_100_to_50 pll (
+logic clk_17;
+mmcm_100_to_17 pll (
     .clk_100(sys_clk),
-    .clk_50(clk_50)
+    .clk_17(clk_17)
 );
 
 
-// Instantiate the sine wave generator
-wire [23:0] sine_out_w;
-wire sine_valid_w;
+// Wave initializations
+wire [15:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
 
 sinusoid
-#(.width_p(24), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
 sine_wave_inst
 (
-    .clk_i(sys_clk),
+    .clk_i(clk_17),
     .reset_i(rst_n),
-    .ready_i(1'b1),
+    .ready_i(sw[0]),
     .data_o(sine_out_w),
-    .valid_o(sine_valid_w)
+    .valid_o()
+);
+
+square_wave
+#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+square_wave_inst
+(
+    .clk_i(clk_17),
+    .reset_i(rst_n),
+    .ready_i(sw[1]),
+    .data_o(square_out_w),
+    .valid_o()
+);
+
+triangle_wave
+#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+triangle_wave_inst
+(
+    .clk_i(clk_17),
+    .reset_i(rst_n),
+    .ready_i(sw[2]),
+    .data_o(tri_out_w),
+    .valid_o()
+);
+
+sawtooth_wave
+#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+saw_wave_inst
+(
+    .clk_i(clk_17),
+    .reset_i(rst_n),
+    .ready_i(sw[3]),
+    .data_o(saw_out_w),
+    .valid_o()
 );
 
 // Audio data busses
 wire [23:0] in_audioL;
 wire [23:0] in_audioR;
-wire [23:0] out_audioL;
-wire [23:0] out_audioR;
+wire [15:0] out_audioL;
+wire [15:0] out_audioR;
 
 codec_init
 #()
@@ -53,25 +85,26 @@ codec_init_inst
 (
     .clk(sys_clk),
     .rst(rst_n),
-    .sda(adau1761_cout),
-    .scl(adau1761_cclk)
+    .sda(adau661_cout),
+    .scl(adau661_cclk)
 );
 
 assign led[3:0] = sw[3:0];
 
 // Send sine wave output to DAC instead of passthrough
-assign out_audioL = sw[0] ? sine_out_w : in_audioL;
-assign out_audioR = sw[0] ? sine_out_w : in_audioR;
+assign out_sig_w = sine_out_w + square_out_w + tri_out_w + saw_out_w;
+assign out_audioL = out_sig_w;
+assign out_audioR = out_sig_w;
 
 i2s_ctrl
 #()
 i2s_ctrl_inst
 (
-    .CLK_I(clk_50),
+    .CLK_I(clk_17),
     .RST_I(rst_n),
     .EN_TX_I(1'b1),
     .EN_RX_I(1'b1),
-    .FS_I(4'b0001),
+    .FS_I(4'b0000),
     .MM_I(1'b0),
     .D_L_I(out_audioL),
     .D_R_I(out_audioR),

@@ -42,6 +42,6 @@ module sawtooth_wave
   localparam real increment_val_lp = 1/(depth_p/2);
   initial begin
     for (int i = 0; i < depth_p; i++)
-      mem[i] = i < depth_p? max_val_lp*i*increment_val_lp: max_val_lp*((-1) + (i-(depth_p/2))*increment_val_lp);
+      mem[i] = (i < depth_p) ? (max_val_lp*i*increment_val_lp) : (max_val_lp*((-1) + (i-(depth_p/2))*increment_val_lp));
   end
 endmodule

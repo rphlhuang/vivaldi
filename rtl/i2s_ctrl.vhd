@@ -7,15 +7,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity i2s_ctrl is
    generic (
       -- Width of one Slot (24/20/18/16-bit wide)
-      C_DATA_WIDTH: integer := 24
+      C_DATA_WIDTH: integer := 16
    );
    port (
       CLK_I       : in  std_logic; -- System clock (100 MHz)
       RST_I       : in  std_logic; -- System reset
       EN_TX_I     : in  std_logic; -- Transmit enable
       EN_RX_I     : in  std_logic; -- Receive enable
-		FS_I			: in  std_logic_vector(3 downto 0); -- Sampling rate slector
-		MM_I    		: in  std_logic; -- Audio controler Master Mode delcetor
+		FS_I			: in  std_logic_vector(3 downto 0); -- Sampling rate
+		MM_I    		: in  std_logic; -- Audio controler Master Mode
 		D_L_I       : in  std_logic_vector(C_DATA_WIDTH-1 downto 0); -- Left channel data
       D_R_I       : in  std_logic_vector(C_DATA_WIDTH-1 downto 0); -- Right channel data
       D_L_O       : out std_logic_vector(C_DATA_WIDTH-1 downto 0); -- Left channel data
