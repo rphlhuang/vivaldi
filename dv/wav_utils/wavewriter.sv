@@ -24,7 +24,7 @@ initial begin
   bits_per_sample = 16;
 
   write_wav_header(sample_rate, num_channels, bits_per_sample);
-  write_sine(sample_rate, num_channels, bits_per_sample, sample_rate, 440);
+  write_sine(sample_rate, num_channels, bits_per_sample, sample_rate, 220);
   update_wav_header();
   // write_bytes("Hello World", 11);
   close_file();

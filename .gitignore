@@ -6,3 +6,5 @@ __pycache__
 *.fst
 build
 .vscode/
+.DS_Store
+*.wav
