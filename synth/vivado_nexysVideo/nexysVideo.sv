@@ -85,8 +85,8 @@ codec_init_inst
 (
     .clk(sys_clk),
     .rst(rst_n),
-    .sda(adau661_cout),
-    .scl(adau661_cclk)
+    .sda(adau1761_cout),
+    .scl(adau1761_cclk)
 );
 
 assign led[3:0] = sw[3:0];
