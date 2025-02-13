@@ -9,17 +9,16 @@ module amp_modulator_runner;
 
   logic clk;
   logic rst;
-  logic signed [DATA_WIDTH-1:0] signal;
-  logic signed [DATA_WIDTH-1:0] modulator;
-  logic signed [DATA_WIDTH-1:0] signal_out;
+  logic signed [DATA_WIDTH-1:0] signal_i;
+  logic signed [DATA_WIDTH-1:0] modulator_i;
+  logic signed [DATA_WIDTH-1:0] signal_o;
 
-  // Instantiate the DUT
   amp_modulator #(.DATA_WIDTH(DATA_WIDTH)) uut (
       .clk_i(clk),
       .rst_i(rst),
-      .signal_i(signal),
-      .modulator_i(modulator),
-      .signal_o(signal_out)
+      .signal_i(signal_i),
+      .modulator_i(modulator_i),
+      .signal_o(signal_o)
   );
 
   always #(CLK_PERIOD / 2) clk = ~clk;
@@ -30,24 +29,32 @@ module amp_modulator_runner;
   task automatic init_sine_lut;
     int i;
     for (i = 0; i < SINE_SAMPLE_SIZE; i++) begin
-      sine_lut[i] = $rtoi($sin(2 * PI * i / SINE_SAMPLE_SIZE) * (2**(DATA_WIDTH-2)));//sigmoid of sine wave
+      sine_lut[i] = $rtoi($sin(2 * PI * i / SINE_SAMPLE_SIZE) * (2**(DATA_WIDTH-2)));//sigmoid of sine wave scaled to fit within bit width signed range
     end
   endtask
 
   task automatic reset;
-    int i;
     rst = 1;
     #(CLK_PERIOD * 5);
     rst = 0;
   endtask
 
   task automatic run_test;
-    for (i = 0; i < SINE_SAMPLE_SIZE * 3; i++) begin//n periods
-      signal = sine_lut[i % SINE_SAMPLE_SIZE];//actual sin wave generated
-      modulator = (i / 10) * 256;//increase volume
-      #(CLK_PERIOD);
+    int i;
+    int modulator_index;
+    real modulator_wave_value;
+    real modulator_frequency = 0.1;//som random frequency step
+
+    for (i = 0; i < SINE_SAMPLE_SIZE * 20; i++) begin //n periods
+        //input sin
+        signal_i = sine_lut[i % SINE_SAMPLE_SIZE];
+        //modulator with lower frequency
+        modulator_index = i * modulator_frequency;//to make it some scale less frequent than the input signal sin
+        modulator_wave_value = $sin(2 * PI * modulator_index / SINE_SAMPLE_SIZE);
+        modulator_i = modulator_wave_value * 256;//scale amplitude
+        #(CLK_PERIOD);
     end
-    $stop;
-  endtask
+endtask
+
 
 endmodule
