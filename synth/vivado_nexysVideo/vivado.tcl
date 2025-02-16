@@ -19,14 +19,14 @@ add_files -fileset constrs_1 -norecurse {
 set_property top nexysVideo [current_fileset]
 
 # Generate Clock
-create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name mmcm_100_to_17
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name mmcm_100_to_12
 set_property -dict [list \
-  CONFIG.CLK_OUT1_PORT {clk_17} \
-  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {17} \
+  CONFIG.CLK_OUT1_PORT {clk_12} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {12.288} \
   CONFIG.PRIMARY_PORT {clk_100} \
   CONFIG.USE_LOCKED {false} \
   CONFIG.USE_RESET {false} \
-] [get_ips mmcm_100_to_17]
+] [get_ips mmcm_100_to_12]
 
 # Run Synthesis
 set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]
@@ -42,7 +42,7 @@ launch_runs impl_1 -to_step write_bitstream
 wait_on_run impl_1
 
 # Open Hardware Manager
-open_hw
+open_hw_manager
 
 # Connect to the FPGA
 connect_hw_server

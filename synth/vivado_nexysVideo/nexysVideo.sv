@@ -19,21 +19,40 @@ module nexysVideo (
 
 wire logic rst_n = btnC;
 
-logic clk_17;
-mmcm_100_to_17 pll (
+logic clk_12;
+mmcm_100_to_12 pll (
     .clk_100(sys_clk),
-    .clk_17(clk_17)
+    .clk_12(clk_12)
 );
 
 
+// Wave clock generation
+logic clk_48kHz;
+logic [31:0] counter;
+localparam div_factor = 128; // 256 for 12.288 MHz -> 48 kHz
+
+always_ff @(posedge clk_12 or posedge rst_n) begin
+    if (rst_n) begin
+        counter <= 0;
+        clk_48kHz <= 0;
+    end else begin
+        if (counter == (div_factor - 1)) begin
+            clk_48kHz <= ~clk_48kHz; // Toggle clock every 256 cycles
+            counter <= 0;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+end
+
 // Wave initializations
-wire [15:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
+wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
 
 sinusoid
-#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+#(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
 sine_wave_inst
 (
-    .clk_i(clk_17),
+    .clk_i(clk_48kHz),
     .reset_i(rst_n),
     .ready_i(sw[0]),
     .data_o(sine_out_w),
@@ -41,10 +60,10 @@ sine_wave_inst
 );
 
 square_wave
-#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+#(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
 square_wave_inst
 (
-    .clk_i(clk_17),
+    .clk_i(clk_48kHz),
     .reset_i(rst_n),
     .ready_i(sw[1]),
     .data_o(square_out_w),
@@ -52,10 +71,10 @@ square_wave_inst
 );
 
 triangle_wave
-#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+#(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
 triangle_wave_inst
 (
-    .clk_i(clk_17),
+    .clk_i(clk_48kHz),
     .reset_i(rst_n),
     .ready_i(sw[2]),
     .data_o(tri_out_w),
@@ -63,10 +82,10 @@ triangle_wave_inst
 );
 
 sawtooth_wave
-#(.width_p(16), .sampling_freq_p(44.1 * 10 ** 3), .note_freq_p(440.0))
+#(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
 saw_wave_inst
 (
-    .clk_i(clk_17),
+    .clk_i(clk_48kHz),
     .reset_i(rst_n),
     .ready_i(sw[3]),
     .data_o(saw_out_w),
@@ -76,8 +95,8 @@ saw_wave_inst
 // Audio data busses
 wire [23:0] in_audioL;
 wire [23:0] in_audioR;
-wire [15:0] out_audioL;
-wire [15:0] out_audioR;
+wire [23:0] out_audioL;
+wire [23:0] out_audioR;
 
 codec_init
 #()
@@ -100,20 +119,20 @@ i2s_ctrl
 #()
 i2s_ctrl_inst
 (
-    .CLK_I(clk_17),
+    .CLK_I(clk_12),
     .RST_I(rst_n),
     .EN_TX_I(1'b1),
-    .EN_RX_I(1'b1),
-    .FS_I(4'b0000),
+    .EN_RX_I(1'b0),
+    .FS_I(4'b0101), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
     .MM_I(1'b0),
-    .D_L_I(out_audioL),
-    .D_R_I(out_audioR),
+    .D_L_I(sine_out_w),
+    .D_R_I(sine_out_w),
     .D_L_O(),
     .D_R_O(),
     .BCLK_O(ac_bclk),
     .LRCLK_O(ac_lrclk),
     .SDATA_O(ac_dac_sdata),
-    .SDATA_I(ac_adc_sdata)
+    .SDATA_I(1'b0)
 );
 
 endmodule
