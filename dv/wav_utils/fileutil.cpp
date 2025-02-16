@@ -33,7 +33,7 @@ extern "C" {
         }
         g_out.write(reinterpret_cast<const char*>(data), length);
         g_dataBytesWritten += length;
-        std::cout << "Wrote " << length << " bytes; total written: " << g_dataBytesWritten << std::endl;
+        // std::cout << "Wrote " << length << " bytes; total written: " << g_dataBytesWritten << std::endl;
     }
 
     void write_wav_header(int sample_rate, int num_channels, int bits_per_sample) {
@@ -111,20 +111,20 @@ extern "C" {
     }
 
 
-    // write 'length' bytes from data array to the open file
-    void write_bytes(const unsigned char* data, int length) {
-        if (!g_out) {
-            std::cerr << "Error: file not open for writing.\n";
-            return;
-        }
-        if (length < 0) {
-            std::cerr << "Error: negative length provided.\n";
-            return;
-        }
-        g_out.write(reinterpret_cast<const char*>(data), static_cast<std::streamsize>(length));
-        if (!g_out.good())
-            std::cerr << "Error: writing failed.\n";
-    }
+    // // write 'length' bytes from data array to the open file
+    // void write_bytes(const unsigned char* data, int length) {
+    //     if (!g_out) {
+    //         std::cerr << "Error: file not open for writing.\n";
+    //         return;
+    //     }
+    //     if (length < 0) {
+    //         std::cerr << "Error: negative length provided.\n";
+    //         return;
+    //     }
+    //     g_out.write(reinterpret_cast<const char*>(data), static_cast<std::streamsize>(length));
+    //     if (!g_out.good())
+    //         std::cerr << "Error: writing failed.\n";
+    // }
 
     // close the file if it is open
     void close_file() {

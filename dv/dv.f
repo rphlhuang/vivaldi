@@ -1,7 +1,9 @@
 
 dv/dv_pkg.sv
 
-dv/blinky_tb.sv
+dv/vivaldi_tb.sv
+dv/wav_utils/wavewriter.sv
+dv/wav_utils/fileutil.cpp
 
 --timing
 -j 0

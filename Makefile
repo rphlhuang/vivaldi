@@ -1,16 +1,13 @@
 
-TOP := blinky_tb
+TOP := vivaldi_tb
 
-export BASEJUMP_STL_DIR := $(abspath third_party/basejump_stl)
 export YOSYS_DATDIR := $(shell yosys-config --datdir)
 
 RTL := $(shell \
- BASEJUMP_STL_DIR=$(BASEJUMP_STL_DIR) \
  python3 misc/convert_filelist.py Makefile rtl/rtl.f \
 )
 
 SV2V_ARGS := $(shell \
- BASEJUMP_STL_DIR=$(BASEJUMP_STL_DIR) \
  python3 misc/convert_filelist.py sv2v rtl/rtl.f \
 )
 
@@ -20,6 +17,7 @@ lint:
 	verilator lint/verilator.vlt -f rtl/rtl.f -f dv/dv.f --lint-only --top blinky
 
 sim:
+	rm -f out.wav
 	verilator lint/verilator.vlt --Mdir ${TOP}_$@_dir -f rtl/rtl.f -f dv/pre_synth.f -f dv/dv.f --binary -Wno-fatal --top ${TOP}
 	./${TOP}_$@_dir/V${TOP} +verilator+rand+reset+2
 
