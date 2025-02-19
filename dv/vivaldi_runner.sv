@@ -35,7 +35,7 @@ initial begin
 end
 
 // wave mod insts
-wire signed [BITS_PER_SAMPLE - 1:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
+logic signed [BITS_PER_SAMPLE - 1:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
 
 sinusoid
 #(.width_p(BITS_PER_SAMPLE), .sampling_freq_p(SAMPLE_FREQUENCY), .note_freq_p(440.0))
@@ -84,11 +84,18 @@ saw_wave_inst
 // output signal mux
 wire signed [BITS_PER_SAMPLE - 1:0] out_audioL;
 wire signed [BITS_PER_SAMPLE - 1:0] out_audioR;
-assign out_sig_w = $signed(sine_out_w + square_out_w + tri_out_w + saw_out_w);
+always_comb begin : comb_signals
+  case (sw)
+    4'b0001: out_sig_w = sine_out_w;
+    4'b0010: out_sig_w = square_out_w;
+    4'b0100: out_sig_w = tri_out_w;
+    4'b1000: out_sig_w = saw_out_w;
+    default: out_sig_w = '0; 
+  endcase
+end
+// assign out_sig_w = $signed(sine_out_w + square_out_w + tri_out_w + saw_out_w);
 assign out_audioL = $signed($rtoi(out_sig_w * gain_percent));
 assign out_audioR = $signed($rtoi(out_sig_w * gain_percent));
-// assign out_audioL = out_sig_w;
-// assign out_audioR = out_sig_w;
 
 // tasks
 task automatic reset;
@@ -122,7 +129,6 @@ task automatic select_sawtooth;
   @(posedge clk_i);
   sw = 4'b1000;
 endtask
-
 
 
 task automatic hello_cpp();

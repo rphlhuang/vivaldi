@@ -22,9 +22,9 @@ initial begin
     vivaldi_runner.write_next_num_secs(1);
     vivaldi_runner.select_square();
     vivaldi_runner.write_next_num_secs(1);
-    vivaldi_runner.select_sawtooth();
-    vivaldi_runner.write_next_num_secs(1);
     vivaldi_runner.select_triangle();
+    vivaldi_runner.write_next_num_secs(1);
+    vivaldi_runner.select_sawtooth();
     vivaldi_runner.write_next_num_secs(1);
 
     vivaldi_runner.close_wav_file();

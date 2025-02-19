@@ -46,10 +46,8 @@ module sinusoid
       // mem[i] = $rtoi((max_val_lp) * $sin(note_freq_p * i * 2 * pi_lp / sampling_freq_p));
       // mem[i] = $rtoi(max_val_lp * $sin(2 * pi_lp * i / depth_p));
       mem[i] = $signed($rtoi(max_val_lp * $sin(2 * pi_lp * i / depth_p)))[$bits(mem[i])-1:0];
-
-
-    for (int i = 0; i < depth_p; i++) begin
-      $display("mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
-  end
+      
+    // for (int i = 0; i < depth_p; i++)
+    //   $display("mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
   end
 endmodule
