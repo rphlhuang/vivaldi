@@ -21,6 +21,11 @@ sim:
 	verilator lint/verilator.vlt --Mdir ${TOP}_$@_dir -f rtl/rtl.f -f dv/pre_synth.f -f dv/dv.f --binary -Wno-fatal --top ${TOP}
 	./${TOP}_$@_dir/V${TOP} +verilator+rand+reset+2
 
+sim_and_read: sim
+	cd dv/wav_utils && make read
+	cp dv/wav_utils/wavereader.fst .
+	rm dv/wav_utils/wavereader.fst
+
 synth/build/rtl.sv2v.v: ${RTL} rtl/rtl.f
 	mkdir -p $(dir $@)
 	sv2v ${SV2V_ARGS} -w $@ -DSYNTHESIS
@@ -73,8 +78,12 @@ clean:
 	rm -rf \
 	 *.memh *.memb \
 	 *sim_dir *gls_dir \
-	 dump.vcd dump.fst \
+	 dump.vcd dump.fst wavereader.fst \
 	 synth/build \
 	 synth/yosys_generic/build \
 	 synth/icestorm_icebreaker/build \
-	 synth/vivado_basys3/build
+	 synth/vivado_basys3/build \
+	 dv/obj_dir \
+	 dv/wav_utils/obj_dir \
+	 dv/wav_utils/dump.fst \
+	 out.wav

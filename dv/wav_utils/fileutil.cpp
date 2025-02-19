@@ -3,6 +3,8 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include <vector>
+#include <algorithm>
 
 
 extern "C" {
@@ -22,7 +24,7 @@ extern "C" {
     }
 
     // write data and update the global counter
-    void write_data_bytes(const unsigned char* data, int length) {
+    void write_data_bytes(const unsigned char* data, int length, int flip_endian) {
         if (!g_out) {
             std::cerr << "Error: file not open for writing.\n";
             return;
@@ -31,7 +33,16 @@ extern "C" {
             std::cerr << "Error: negative length provided.\n";
             return;
         }
-        g_out.write(reinterpret_cast<const char*>(data), length);
+
+        if (flip_endian == 1) {
+            // create a temporary copy and reverse it
+            std::vector<unsigned char> tmp(data, data + length);
+            std::reverse(tmp.begin(), tmp.end());
+            g_out.write(reinterpret_cast<const char*>(tmp.data()), length);
+        } else {
+            g_out.write(reinterpret_cast<const char*>(data), length);
+        }
+
         g_dataBytesWritten += length;
         // std::cout << "Wrote " << length << " bytes; total written: " << g_dataBytesWritten << std::endl;
     }
@@ -82,7 +93,7 @@ extern "C" {
             // std::cout << "Writing sample w/ value " << std::setw(10) << sample << std::endl;
             // write sample to each channel
             for (int j = 0; j < num_channels; j++) {
-                write_data_bytes(reinterpret_cast<const unsigned char*>(&sample), bits_per_sample / 8);
+                write_data_bytes(reinterpret_cast<const unsigned char*>(&sample), bits_per_sample / 8, 0);
             }
             t += increment;
         }
@@ -97,6 +108,8 @@ extern "C" {
         // calculate sizes
         int dataSize = g_dataBytesWritten;
         int chunkSize = 36 + dataSize; // total file size - 8
+        std::cout << "Updating header w/ chunk size: " << chunkSize << " bytes\n";
+        std::cout << "Updating header w/ data size: " << dataSize << " bytes\n";
 
         // update ChunkSize at byte offset 4 (4 bytes)
         g_out.seekp(4, std::ios::beg);

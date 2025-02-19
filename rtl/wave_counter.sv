@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module wave_counter
   // this is just a regular counter, named differently to not conflict with
   // any other counter you  might use

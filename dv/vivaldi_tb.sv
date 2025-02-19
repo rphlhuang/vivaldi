@@ -14,7 +14,7 @@ initial begin
 
     // IF YOU WANT TO KEEP YOUR EARDRUMS
     // ALWAYS SET THE GAIN BELOW 100%!
-    vivaldi_runner.set_gain_percent(100); 
+    vivaldi_runner.set_gain_percent(80); 
 
     vivaldi_runner.open_wav_file();
 

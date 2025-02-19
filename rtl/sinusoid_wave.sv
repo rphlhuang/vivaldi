@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module sinusoid
   #(parameter width_p = 12
    ,parameter real sampling_freq_p = 44.1 * 10 ** 3
@@ -6,15 +7,15 @@ module sinusoid
   (input [0:0] clk_i
   ,input [0:0] reset_i
   ,input [0:0] ready_i
-  ,output [width_p-1:0] data_o
+  ,output signed [width_p-1:0] data_o
   ,output [0:0] valid_o
    );
 
   localparam depth_p = $rtoi(sampling_freq_p / note_freq_p);
   localparam depth_log2_p = $clog2(depth_p);
 
-  logic [depth_log2_p-1:0] addr_w;
-  logic [width_p - 1 : 0] sine_w;
+  logic signed [depth_log2_p-1:0] addr_w;
+  logic signed [width_p - 1 : 0] sine_w;
   assign valid_o = 1'b1;
 
   wave_counter
@@ -28,7 +29,7 @@ module sinusoid
 
   assign data_o = sine_w;
 
-  logic [width_p-1 : 0] mem [0 : depth_p - 1];
+  logic signed [width_p-1 : 0] mem [0 : depth_p - 1];
   always_ff @(posedge clk_i) begin
     if (reset_i)
       sine_w <= '0;
@@ -42,6 +43,13 @@ module sinusoid
   localparam real pi_lp = 3.14159;
   initial begin
     for (int i = 0; i < depth_p; i++)
-      mem[i] = $rtoi((max_val_lp) * $sin(note_freq_p * i * 2 * pi_lp / sampling_freq_p));
+      // mem[i] = $rtoi((max_val_lp) * $sin(note_freq_p * i * 2 * pi_lp / sampling_freq_p));
+      // mem[i] = $rtoi(max_val_lp * $sin(2 * pi_lp * i / depth_p));
+      mem[i] = $signed($rtoi(max_val_lp * $sin(2 * pi_lp * i / depth_p)))[$bits(mem[i])-1:0];
+
+
+    for (int i = 0; i < depth_p; i++) begin
+      $display("mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
+  end
   end
 endmodule

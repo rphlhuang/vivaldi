@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module sawtooth_wave
   #(parameter width_p = 12
    ,parameter real sampling_freq_p = 44.1 * 10 ** 3

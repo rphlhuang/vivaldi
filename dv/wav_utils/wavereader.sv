@@ -40,13 +40,13 @@ module wavereader();
 
     logic [7:0] my_byte;
     initial begin
-        $dumpfile("dump.fst");
+        $dumpfile("wavereader.fst");
         $dumpvars;
         $display("------   Simulation Start   ------");
         data_valid = 1'b0;
         data_left_aux = '0;
         data_right_aux = '0;
-        audio_in = $fopen("../wav_examples/sineHalfSecond.wav", "r");
+        audio_in = $fopen("../../out.wav", "r");
 
         status = $fread(chunk_id, audio_in);
         if (status != 0) begin
@@ -55,7 +55,7 @@ module wavereader();
         status = $fread(chunk_size, audio_in);
         if (status != 0) begin
             chunk_size = { << byte {chunk_size}}; // Converts to big endian
-            $display ("Chunk Size: %h bytes", chunk_size);
+            $display ("Chunk Size: %d bytes", chunk_size);
         end
         status = $fread(format, audio_in);
         if (status != 0) begin

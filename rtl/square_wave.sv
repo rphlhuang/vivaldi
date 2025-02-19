@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module square_wave
   #(parameter width_p = 12
    ,parameter real sampling_freq_p = 44.1 * 10 ** 3
@@ -40,7 +41,8 @@ module square_wave
   // Maximum value sin can get accounting for the sign bit
   localparam real max_val_lp = (1 << (width_p - 1)) - 1;
   initial begin
-    for (int i = 0; i < depth_p; i++)
+    mem[0] = '0;
+    for (int i = 1; i < depth_p; i++)
       mem[i] = (i < depth_p) ? max_val_lp : '0;
   end
 endmodule
