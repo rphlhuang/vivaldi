@@ -1,4 +1,4 @@
-#start_gui
+start_gui
 
 create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L
 
@@ -19,14 +19,15 @@ add_files -fileset constrs_1 -norecurse {
 set_property top nexysVideo [current_fileset]
 
 # Generate Clock
-create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name mmcm_100_to_12
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wizard
 set_property -dict [list \
   CONFIG.CLK_OUT1_PORT {clk_12} \
-  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {12.288} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {12.28879} \
   CONFIG.PRIMARY_PORT {clk_100} \
   CONFIG.USE_LOCKED {false} \
   CONFIG.USE_RESET {false} \
-] [get_ips mmcm_100_to_12]
+] [get_ips clk_wizard]
+
 
 # Run Synthesis
 set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]

@@ -2,6 +2,7 @@ module nexysVideo (
     input [0:0] sys_clk,
     input [0:0] btnC, // reset
     input [3:0] sw, // For selecting wave
+    input [7:4] ja, // PMOD connector pins
 
     // I2C Config Interface
     inout [0:0] adau1761_cclk,
@@ -14,13 +15,39 @@ module nexysVideo (
     output [0:0] ac_bclk,
     output [0:0] ac_lrclk,
 
-    output [3:0] led
+    output [7:0] led
 );
+
+// Rotary Encoder Controls
+wire [4:0] enc_o;
+encoder_debounce
+#()
+(
+    .clk(clk_12),
+    .A_i(ja[4]),
+    .B_i(ja[5]),
+    .A_o(A_O),
+    .B_o(B_O)
+);
+
+encoder
+#()
+(
+    .clk(clk_12),
+    .A_i(A_O),
+    .B_i(B_O),
+    .BTN_i(ja[6]),
+    .EncPos_o(enc_o),
+    .LED_o(led)
+);
+
 
 wire logic rst_n = btnC;
 
+// PLL Declaration
 logic clk_12;
-mmcm_100_to_12 pll (
+
+clk_wizard pll (
     .clk_100(sys_clk),
     .clk_12(clk_12)
 );
@@ -107,8 +134,6 @@ codec_init_inst
     .sda(adau1761_cout),
     .scl(adau1761_cclk)
 );
-
-assign led[3:0] = sw[3:0];
 
 // Send sine wave output to DAC instead of passthrough
 assign out_sig_w = sine_out_w + square_out_w + tri_out_w + saw_out_w;
