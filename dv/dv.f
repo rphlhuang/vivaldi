@@ -2,6 +2,8 @@
 dv/dv_pkg.sv
 
 dv/vivaldi_tb.sv
+dv/vivaldi_runner.sv
+
 dv/wav_utils/wavewriter.sv
 dv/wav_utils/fileutil.cpp
 
