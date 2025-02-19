@@ -1,27 +1,30 @@
 
-TOP := blinky_tb
+TOP := vivaldi_tb
 
-export BASEJUMP_STL_DIR := $(abspath third_party/basejump_stl)
 export YOSYS_DATDIR := $(shell yosys-config --datdir)
 
 RTL := $(shell \
- BASEJUMP_STL_DIR=$(BASEJUMP_STL_DIR) \
  python3 misc/convert_filelist.py Makefile rtl/rtl.f \
 )
 
 SV2V_ARGS := $(shell \
- BASEJUMP_STL_DIR=$(BASEJUMP_STL_DIR) \
  python3 misc/convert_filelist.py sv2v rtl/rtl.f \
 )
 
 .PHONY: lint sim gls icestorm_icebreaker_gls icestorm_icebreaker_program icestorm_icebreaker_flash clean
 
 lint:
-	verilator lint/verilator.vlt -f rtl/rtl.f -f dv/dv.f --lint-only --top blinky
+	verilator lint/verilator.vlt -f rtl/rtl.f -f dv/dv.f --lint-only --top ${TOP}
 
 sim:
+	rm -f out.wav
 	verilator lint/verilator.vlt --Mdir ${TOP}_$@_dir -f rtl/rtl.f -f dv/pre_synth.f -f dv/dv.f --binary -Wno-fatal --top ${TOP}
 	./${TOP}_$@_dir/V${TOP} +verilator+rand+reset+2
+
+sim_and_read: sim
+	cd dv/wav_utils && make read
+	cp dv/wav_utils/wavereader.fst .
+	rm dv/wav_utils/wavereader.fst
 
 synth/build/rtl.sv2v.v: ${RTL} rtl/rtl.f
 	mkdir -p $(dir $@)
@@ -75,8 +78,12 @@ clean:
 	rm -rf \
 	 *.memh *.memb \
 	 *sim_dir *gls_dir \
-	 dump.vcd dump.fst \
+	 dump.vcd dump.fst wavereader.fst \
 	 synth/build \
 	 synth/yosys_generic/build \
 	 synth/icestorm_icebreaker/build \
-	 synth/vivado_basys3/build
+	 synth/vivado_basys3/build \
+	 dv/obj_dir \
+	 dv/wav_utils/obj_dir \
+	 dv/wav_utils/dump.fst \
+	 out.wav

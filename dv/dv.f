@@ -1,7 +1,11 @@
 
 dv/dv_pkg.sv
 
-dv/blinky_tb.sv
+dv/vivaldi_tb.sv
+dv/vivaldi_runner.sv
+
+dv/wav_utils/wavewriter.sv
+dv/wav_utils/fileutil.cpp
 
 --timing
 -j 0
@@ -18,3 +22,6 @@ dv/blinky_tb.sv
 -Werror-IMPLICIT
 -Werror-USERERROR
 -Werror-LATCH
+
+// for ARM Macs
+-CFLAGS -std=c++14

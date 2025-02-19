@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module square_wave
   #(parameter width_p = 12
    ,parameter real sampling_freq_p = 44.1 * 10 ** 3
@@ -6,7 +7,7 @@ module square_wave
   (input [0:0] clk_i
   ,input [0:0] reset_i
   ,input [0:0] ready_i
-  ,output [width_p-1:0] data_o
+  ,output signed [width_p-1:0] data_o
   ,output [0:0] valid_o
    );
 
@@ -40,7 +41,11 @@ module square_wave
   // Maximum value sin can get accounting for the sign bit
   localparam real max_val_lp = (1 << (width_p - 1)) - 1;
   initial begin
+    mem[0] = '0;
+    for (int i = 1; i < depth_p; i++)
+      mem[i] = (i < (depth_p / 2)) ? max_val_lp : max_val_lp * -1;
+
     for (int i = 0; i < depth_p; i++)
-      mem[i] = (i < depth_p) ? max_val_lp : '0;
+      $display("square mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
   end
 endmodule

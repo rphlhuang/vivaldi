@@ -1,2 +1,2 @@
 
-dv/blinky_runner.sv
+dv/vivaldi_runner.sv

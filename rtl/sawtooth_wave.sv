@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module sawtooth_wave
   #(parameter width_p = 12
    ,parameter real sampling_freq_p = 44.1 * 10 ** 3
@@ -38,10 +39,18 @@ module sawtooth_wave
 
   // Memory initialization
   // Maximum value sin can get accounting for the sign bit
+  // localparam real max_val_lp = (1 << (width_p - 1)) - 1;
+  // localparam real increment_val_lp = 1/(depth_p/2);
   localparam real max_val_lp = (1 << (width_p - 1)) - 1;
-  localparam real increment_val_lp = 1/(depth_p/2);
+  localparam real increment_val_lp = max_val_lp/(depth_p/2);
   initial begin
+    // for (int i = 0; i < depth_p; i++)
+    //   mem[i] = (i < depth_p) ? (max_val_lp*i*increment_val_lp) : (max_val_lp*((-1) + (i-(depth_p/2))*increment_val_lp));
+
     for (int i = 0; i < depth_p; i++)
-      mem[i] = (i < depth_p) ? (max_val_lp*i*increment_val_lp) : (max_val_lp*((-1) + (i-(depth_p/2))*increment_val_lp));
+      mem[i] = (i < depth_p) ? (i*increment_val_lp) : (max_val_lp -(increment_val_lp*(i-(depth_p/2))));
+
+    for (int i = 0; i < depth_p; i++)
+      $display("sawtooth mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
   end
 endmodule
