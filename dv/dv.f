@@ -7,6 +7,8 @@ dv/vivaldi_runner.sv
 dv/wav_utils/wavewriter.sv
 dv/wav_utils/fileutil.cpp
 dv/amp_modulator_tb.sv
+dv/adsr_envelope_tb.sv
+dv/adsr_envelope_runner.sv
 
 --timing
 -j 0
