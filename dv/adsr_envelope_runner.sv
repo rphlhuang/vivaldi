@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module amp_modulator_runner;
+module adsr_envelope_runner;
 
   parameter DATA_WIDTH = 16;
   parameter CLK_PERIOD = 10;
@@ -9,32 +9,39 @@ module amp_modulator_runner;
 
   logic clk;
   logic rst;
-  logic signed [DATA_WIDTH-1:0] signal_i;
-  logic signed [DATA_WIDTH-1:0] modulator_i;
-  logic signed [DATA_WIDTH-1:0] signal_o;
+  logic valid_i;
+  logic ready_o;
+  logic signed [DATA_WIDTH-1:0] envelope_o;
 
-  amp_modulator #(.DATA_WIDTH(DATA_WIDTH)) uut (
-      .clk_i(clk),
-      .rst_i(rst),
-      .signal_i(signal_i),
-      .modulator_i(modulator_i),
-      .signal_o(signal_o)
-  );
+  adsr_envelope #(
+    .DATA_WIDTH(DATA_WIDTH),
+    .CLK_PERIOD(CLK_PERIOD),
+    .ATTACK_TIME(100),//clk cycles
+    .DECAY_TIME(100),
+    .SUSTAIN_LEVEL(0.5),//sustain levelm what it drops to
+    .RELEASE_TIME(100)
+    ) adsr (
+        .clk_i(clk),
+        .rst_i(rst),
+        .valid_i(valid_i),
+        .ready_o(ready_o),
+        .envelope_o(envelope_o)
+    );
 
   always #(CLK_PERIOD / 2) clk = ~clk;
 
   //lut
-  logic signed [DATA_WIDTH-1:0] sine_lut [0:SINE_SAMPLE_SIZE-1];
-
+  //logic signed [DATA_WIDTH-1:0] sine_lut [0:SINE_SAMPLE_SIZE-1];
+/*
   task automatic init_sine_lut;
     int i;
     for (i = 0; i < SINE_SAMPLE_SIZE; i++) begin
       sine_lut[i] = $rtoi($sin(2 * PI * i / SINE_SAMPLE_SIZE) * (2**(DATA_WIDTH-2)));//sigmoid of sine wave scaled to fit within bit width signed range
     end
   endtask
-
+*/
   task automatic reset;
-  clk = 0;
+    clk = 0;
     rst = 1;
     #(CLK_PERIOD * 5);
     rst = 0;
@@ -42,10 +49,12 @@ module amp_modulator_runner;
 
   task automatic run_test;
     int i;
-    int modulator_index;
-    real modulator_wave_value;
-    real modulator_frequency = 0.1;//som random frequency step
-
+    #100;
+    valid_i = 1'b1;
+    #1_000_000;
+    valid_i = 1'b0;
+    #1_000_000;
+/*
     for (i = 0; i < SINE_SAMPLE_SIZE * 20; i++) begin //n periods
         //input sin
         signal_i = sine_lut[i % SINE_SAMPLE_SIZE];
@@ -55,6 +64,7 @@ module amp_modulator_runner;
         modulator_i = modulator_wave_value * 256;//scale amplitude
         #(CLK_PERIOD);
     end
+    */
 endtask
 
 
