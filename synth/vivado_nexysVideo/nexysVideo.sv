@@ -73,7 +73,8 @@ always_ff @(posedge clk_12 or posedge rst_n) begin
 end
 
 // Wave initializations
-wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
+wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w;
+logic [23:0] out_sig_l;
 
 sinusoid
 #(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
@@ -136,9 +137,17 @@ codec_init_inst
 );
 
 // Send sine wave output to DAC instead of passthrough
-assign out_sig_w = sine_out_w + square_out_w + tri_out_w + saw_out_w;
-assign out_audioL = out_sig_w;
-assign out_audioR = out_sig_w;
+always_comb begin : comb_signals
+  case (sw)
+    4'b0001: out_sig_l = sine_out_w;
+    4'b0010: out_sig_l = square_out_w;
+    4'b0100: out_sig_l = tri_out_w;
+    4'b1000: out_sig_l = saw_out_w;
+    default: out_sig_l = '0; 
+  endcase
+end
+assign out_audioL = out_sig_l;
+assign out_audioR = out_sig_l;
 
 i2s_ctrl
 #()
@@ -150,8 +159,8 @@ i2s_ctrl_inst
     .EN_RX_I(1'b0),
     .FS_I(4'b0101), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
     .MM_I(1'b0),
-    .D_L_I(sine_out_w),
-    .D_R_I(sine_out_w),
+    .D_L_I(out_audioL),
+    .D_R_I(out_audioR),
     .D_L_O(),
     .D_R_O(),
     .BCLK_O(ac_bclk),
