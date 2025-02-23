@@ -44,7 +44,7 @@ module frequency_control
    ,.sampling_freq_p(sample_size_lp*note_freq_p)
    ,.note_freq_p(note_freq_p)
    )
-   sinudoid_inst
+   sinudoid_inst // sinudoid
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
   ,.ready_i(ready_i && (clk_slow_counter_l === clk_div_l))
@@ -82,7 +82,7 @@ module frequency_control
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
   ,.ready_i(ready_i && (clk_slow_counter_l === clk_div_l))
-  ,.data_o(sinusoid_data_o)
+  ,.data_o(sawtooth_data_o)
   ,.valid_o());
 
 
