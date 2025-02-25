@@ -1,0 +1,872 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 40598
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Feb 20 18:35:24 PST 2025
+Time zone: 	Pacific Standard Time (America/Los_Angeles)
+
+OS: Ubuntu
+OS Version: 5.15.167.4-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 22
+LSB Release Description: Ubuntu 24.04.2 LTS
+
+Display: 0
+Screen size: 1600x1000
+Local screen bounds: x = 0, y = 0, width = 1600, height = 1000
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: true
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	anbellum
+User home directory: /home/anbellum
+User working directory: /home/anbellum/vivaldi/synth
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_DATADIR: /tools/Xilinx/SharedData/2024.2/data:/tools/Xilinx/Vivado/2024.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /home/anbellum/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /home/anbellum/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /home/anbellum/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/anbellum/vivaldi/synth/vivado.log
+Vivado journal file: 	/home/anbellum/vivaldi/synth/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-40598-Starlight
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/SharedData/2024.2/data:/tools/Xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2024.2/bin:/tools/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/anbellum/vivaldi/synth:Starlight_1740105312_40530
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2024.2
+XILINX_SDK: /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2024.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,591 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,592 MB. GUI used memory: 63 MB. Current time: 2/20/25, 6:35:25 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9886 ms.
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/anbellum/vivaldi/synth/nexysVideo/nexysVideo.xpr", 1); // b.c (PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS)
+// [GUI Memory]: 88 MB (+89472kb) [00:00:13]
+// [Engine Memory]: 1,592 MB (+1518213kb) [00:00:13]
+// Opening Vivado Project: /home/anbellum/vivaldi/synth/nexysVideo/nexysVideo.xpr. Version: Vivado v2024.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 141 MB (+50948kb) [00:00:14]
+// [Engine Memory]: 1,685 MB (+13515kb) [00:00:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  1593 ms.
+// Tcl Message: open_project /home/anbellum/vivaldi/synth/nexysVideo/nexysVideo.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/anbellum/vivaldi/synth/nexysVideo/nexysVideo.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'. 
+// Project name: nexysVideo; location: /home/anbellum/vivaldi/synth/nexysVideo; part: xc7a200tlsbg484-2L
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// WARNING: HEventQueue.dispatchEvent() is taking  9469 ms.
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+// WARNING: HEventQueue.dispatchEvent() is taking  9485 ms.
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ai (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ai (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ai (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+// WARNING: HEventQueue.dispatchEvent() is taking  9928 ms.
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ai (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ai (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ai (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ai (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ai (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ai (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ai (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ai (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ai (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ai (PAResourceItoN.MainMenuMgr_VIEW, View)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ai (PAResourceItoN.MainMenuMgr_VIEW, View)
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ai (PAResourceItoN.MainMenuMgr_HELP, Help)
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ai (PAResourceItoN.MainMenuMgr_HELP, Help)
+// WARNING: HEventQueue.dispatchEvent() is taking  9690 ms.
+selectButton(PAResourceOtoP.ProjectSettingsGadget_EDIT_PROJECT_SETTINGS, "Edit"); // h (PAResourceOtoP.ProjectSettingsGadget_EDIT_PROJECT_SETTINGS)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl (Dont Echo) Command: 'rdi::info_commands {device::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {debug::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {*}'
+selectButton(PAResourceOtoP.ProjectSettingsGadget_EDIT_PROJECT_SETTINGS, "Edit"); // h (PAResourceOtoP.ProjectSettingsGadget_EDIT_PROJECT_SETTINGS)
+// [Engine Memory]: 1,779 MB (+10699kb) [00:00:43]
+selectMoreButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null, "Settings"); // s (PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT)
+selectMoreButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null, "Settings"); // s (PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT)
+// [GUI Memory]: 162 MB (+14616kb) [00:00:48]
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // g (PAResourceOtoP.PartChooser_TABBED_PANE)
+// [GUI Memory]: 266 MB (+101035kb) [00:00:51]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,806 MB. GUI used memory: 146 MB. Current time: 2/20/25, 6:36:06 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9734 ms.
+setText("PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD", "video"); // OverlayTextField (PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD)
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Nexys Video ; Nexys Video ; digilentinc.com ; 1.2 ; Nexys Video ; 484 ; A.0 ; 285 ; 134600 ; 269200 ; 365 ; 0 ; 740 ; 32 ; 4 ; 4 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 10 ;  ;  ;  ;  ; 0 ;  ;  ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 0, "Nexys Video", 0, false); // n (PAResourceAtoD.BoardChooser_BOARD_TABLE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9547 ms.
+selectButton(RDIResource.BaseDialog_OK, "OK", "Select Device"); // a (RDIResource.BaseDialog_OK)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Select Device"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Select Device"); // c (dialog1)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Settings"); // a (RDIResource.BaseDialog_OK)
+// TclEventType: RUN_MODIFY
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PART_MODIFIED
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part digilentinc.com:nexys_video:part0:1.2 [current_project] 
+// Tcl Message: INFO: [Project 1-152] Project part set to artix7 (xc7a200tsbg484-1) 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Settings"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Change Settings"); // bh (Change Settings Progress)
+dismissDialog("Settings"); // e (dialog0)
+// WARNING: HEventQueue.dispatchEvent() is taking  9689 ms.
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// HOptionPane Error: 'There are no HDL sources in file set 'sources_1'. Please use the Add Sources command. (Run Synthesis)'
+// WARNING: HEventQueue.dispatchEvent() is taking  9576 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9520 ms.
+// 'i' command handler elapsed time: 5 seconds
+selectButton("OptionPane.button", "OK", "Run Synthesis"); // JButton (OptionPane.button)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// WARNING: HEventQueue.dispatchEvent() is taking  9624 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9524 ms.
+// Elapsed time: 10 seconds
+selectButton("CANCEL", "Cancel", "Add Sources"); // JButton (CANCEL)
+// 'f' command handler elapsed time: 9 seconds
+dismissDialog("Add Sources"); // c (dialog2)
+// WARNING: HEventQueue.dispatchEvent() is taking  9736 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9450 ms.
+// Elapsed time: 14 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, PAResourceEtoH.FileSetView_INSERT_TAB, "Hierarchy", 0); // g (PAResourceEtoH.FileSetView_TABBED_PANE, SourcesView)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, PAResourceEtoH.FileSetView_ADD_TAB, "Libraries", 1); // g (PAResourceEtoH.FileSetView_TABBED_PANE, SourcesView)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation-Only Sources, sim_1]", 4, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources, utils_1]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9698 ms.
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation-Only Sources, sim_1]", 4, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// HOptionPane Error: 'There are no HDL sources in file set 'sources_1'. Please use the Add Sources command. (Run Synthesis)'
+// WARNING: HEventQueue.dispatchEvent() is taking  9462 ms.
+selectButton("OptionPane.button", "OK", "Run Synthesis"); // JButton (OptionPane.button)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation-Only Sources]", 3, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// WARNING: HEventQueue.dispatchEvent() is taking  9913 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9623 ms.
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+selectTab((HResource) null, (HResource) null, "Log", 2); // aa
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+// WARNING: HEventQueue.dispatchEvent() is taking  9592 ms.
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-153] The current project device 'xc7a200tlsbg484-2l' does not match with the device on the 'DIGILENTINC.COM:NEXYS_VIDEO:PART0:1.2' board part. A device change to match the device on 'DIGILENTINC.COM:NEXYS_VIDEO:PART0:1.2' board part is being done. Please upgrade the IP in the project via the upgrade_ip command or by selecting Reports => Reports IP Status.. ]", 7, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9718 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9790 ms.
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 433, 109); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+// WARNING: HEventQueue.dispatchEvent() is taking  9508 ms.
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9715 ms.
+setFolderChooser("/home/anbellum/vivaldi/rtl");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9607 ms.
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9467 ms.
+setFolderChooser("/home/anbellum/vivaldi/misc");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9545 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9650 ms.
+setFolderChooser("/home/anbellum/vivaldi/third_party");
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", true); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): TRUE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", true); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): TRUE
+// WARNING: HEventQueue.dispatchEvent() is taking  9622 ms.
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", false); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): FALSE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", true); // f (PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO): TRUE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", true); // f (PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO): TRUE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", true); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): TRUE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", false); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): FALSE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", true); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): TRUE
+// WARNING: HEventQueue.dispatchEvent() is taking  9561 ms.
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 40 seconds
+dismissDialog("Add Sources"); // c (dialog3)
+// WARNING: HEventQueue.dispatchEvent() is taking  9485 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,872 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:38:36 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.
+// [Engine Memory]: 1,889 MB (+21258kb) [00:03:24]
+// WARNING: HEventQueue.dispatchEvent() is taking  9673 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9501 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,022 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:38:54 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9510 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9644 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9477 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,162 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:39:12 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9496 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9633 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,262 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:39:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9480 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9700 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9462 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9759 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,402 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:39:44 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9467 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,478 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:39:56 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9487 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9565 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,527 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:40:02 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9842 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9495 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,684 MB. GUI used memory: 90 MB. Current time: 2/20/25, 6:40:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9706 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9703 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,804 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:40:43 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9503 ms.
+// [Engine Memory]: 2,832 MB (+890099kb) [00:05:34]
+// WARNING: HEventQueue.dispatchEvent() is taking  9729 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,862 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:40:53 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9484 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9705 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9474 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9501 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,040 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:41:20 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9647 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,077 MB. GUI used memory: 90 MB. Current time: 2/20/25, 6:41:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9479 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9577 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9581 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,186 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:41:43 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9683 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,366 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:42:10 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9496 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9592 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9454 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,485 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:42:28 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,595 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:42:47 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9495 ms.
+// [Engine Memory]: 3,658 MB (+717712kb) [00:07:43]
+// WARNING: HEventQueue.dispatchEvent() is taking  9526 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,708 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:43:05 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9473 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9726 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9509 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,820 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:43:23 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9825 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9487 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9554 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9503 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,990 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:43:50 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9859 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,028 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:43:56 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9498 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9729 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9883 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,147 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:44:23 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,243 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:44:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9482 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9629 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9495 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9697 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,378 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:44:45 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9452 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9695 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9456 ms.
+// Elapsed time: 393 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Checking for Conflicts"); // a (RDIResource.ProgressDialog_BACKGROUND)
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Checking for Conflicts"); // a (RDIResource.ProgressDialog_BACKGROUND)
+// [Engine Memory]: 4,501 MB (+691867kb) [00:09:45]
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,586 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:45:13 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9450 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9474 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,649 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:45:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 9448ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9471 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,760 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:45:44 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9461 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9448 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,828 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:45:56 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9487 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9456 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9496 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,929 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:46:11 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9501 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9469 ms.
+// [Engine Memory]: 5,008 MB (+295616kb) [00:11:09]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,024 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:46:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9460 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9508 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9485 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,133 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:46:53 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9500 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,212 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:46:56 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9501 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9479 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,331 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:47:15 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9498 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9497 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,396 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:47:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9490 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9485 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,501 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:47:43 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9468 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,584 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:47:56 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9499 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,701 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:48:24 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,711 MB. GUI used memory: 90 MB. Current time: 2/20/25, 6:48:26 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  10021 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9605 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9627 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,874 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:48:42 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9457 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9562 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,962 MB. GUI used memory: 89 MB. Current time: 2/20/25, 6:48:56 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9503 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 6,080 MB. GUI used memory: 90 MB. Current time: 2/20/25, 6:49:14 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9522 ms.
+// Elapsed time: 256 seconds
+selectButton("HStatusBar_ProgressStatusItem_Cancel", "Cancel"); // NullButton (HStatusBar_ProgressStatusItem_Cancel)
+// [Engine Memory]: 6,097 MB (+879167kb) [00:14:01]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/au.b': 10m:51s
+dismissDialog("Checking for Conflicts"); // bh (Checking for Conflicts Progress)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 651534 ms. Increasing delay to 1954602 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// WARNING: HEventQueue.dispatchEvent() is taking  9486 ms.
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9488 ms.
+setFolderChooser("/home/anbellum/vivaldi/rtl");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9509 ms.
+setFolderChooser("/home/anbellum/vivaldi/third_party");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// WARNING: HEventQueue.dispatchEvent() is taking  9456 ms.
+setFolderChooser("/home/anbellum/vivaldi/synth");
+// WARNING: HEventQueue.dispatchEvent() is taking  9461 ms.
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", false); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): FALSE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", false); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO): FALSE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", false); // f (PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO): FALSE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", false); // f (PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO): FALSE
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 26 seconds
+dismissDialog("Add Sources"); // c (dialog7)
+// WARNING: HEventQueue.dispatchEvent() is taking  9496 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 14m:19s
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// WARNING: HEventQueue.dispatchEvent() is taking  9507 ms.
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a (PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES)
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+// WARNING: HEventQueue.dispatchEvent() is taking  9464 ms.
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 14m:36s
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 6,137 MB. GUI used memory: 99 MB. Current time: 2/20/25, 6:50:08 PM PST
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 14m:38s
+setFolderChooser("/home/anbellum/vivaldi/dv");
+// WARNING: HEventQueue.dispatchEvent() is taking  9469 ms.
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+dismissDialog("Add Sources"); // c (dialog11)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 {/home/anbellum/vivaldi/dv/dv_pkg.sv /home/anbellum/vivaldi/dv/vivaldi_tb.sv /home/anbellum/vivaldi/dv/wav_utils/wavereader.sv /home/anbellum/vivaldi/dv/blinky_runner.sv /home/anbellum/vivaldi/dv/blinky_tb.sv /home/anbellum/vivaldi/dv/wav_utils/wavewriter.sv /home/anbellum/vivaldi/dv/vivaldi_runner.sv} 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// WARNING: HEventQueue.dispatchEvent() is taking  9534 ms.
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton("OptionPane.button", "OK", "Run Synthesis"); // JButton (OptionPane.button)
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 14m:52s
+// Tcl Message: update_compile_order -fileset sim_1 
+// WARNING: HEventQueue.dispatchEvent() is taking  9616 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 14m:54s
+// HMemoryUtils.trashcanNow. Engine heap size: 6,165 MB. GUI used memory: 95 MB. Current time: 2/20/25, 6:50:26 PM PST
+// Elapsed time: 12 seconds
+setText(PAResourceTtoZ.TopModuleDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN, (String) null); // ad (PAResourceTtoZ.TopModuleDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN)
+selectMoreButton(PAResourceTtoZ.TopModuleDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN, (String) null, "Specify Top Module"); // s (PAResourceTtoZ.TopModuleDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN)
+// WARNING: HEventQueue.dispatchEvent() is taking  9464 ms.
+selectMoreButton(PAResourceTtoZ.TopModuleDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN, (String) null, "Specify Top Module"); // s (PAResourceTtoZ.TopModuleDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN)
+// WARNING: HEventQueue.dispatchEvent() is taking  9624 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9453 ms.
+// Elapsed time: 10 seconds
+setText("PAResourceQtoS.SelectTopModuleDialog_ABSTRACT_SEARCHABLE_PANEL_SEARCH_FIELD", "nex"); // OverlayTextField (PAResourceQtoS.SelectTopModuleDialog_ABSTRACT_SEARCHABLE_PANEL_SEARCH_FIELD)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Select Top Module"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Select Top Module"); // L (dialog14)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Specify Top Module"); // a (RDIResource.BaseDialog_OK)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:10s
+// Tcl Message: update_compile_order -fileset sim_1 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Specify Top Module"); // a (RDIResource.BaseDialog_OK)
+selectButton("OptionPane.button", "OK", "Background Task"); // JButton (OptionPane.button)
+// WARNING: HEventQueue.dispatchEvent() is taking  9551 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:14s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top nexysVideo [current_fileset] 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Specify Top Module"); // a (RDIResource.BaseDialog_OK)
+// 'i' command handler elapsed time: 23 seconds
+dismissDialog("Specify Top Module"); // bh (Specify Top Module Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:18s
+// WARNING: HEventQueue.dispatchEvent() is taking  9478 ms.
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Launch Runs"); // g (dialog15)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 11 
+// WARNING: HEventQueue.dispatchEvent() is taking  9483 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9504 ms.
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Thu Feb 20 18:51:03 2025] Launched synth_1... Run output will be captured here: /home/anbellum/vivaldi/synth/nexysVideo/nexysVideo.runs/synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 12246.609 ; gain = 10.008 ; free physical = 6466 ; free virtual = 12758 
+// 'i' command handler elapsed time: 12 seconds
+// Elapsed time: 10 seconds
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// WARNING: HEventQueue.dispatchEvent() is taking  9484 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:34s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:36s
+// HMemoryUtils.trashcanNow. Engine heap size: 6,205 MB. GUI used memory: 97 MB. Current time: 2/20/25, 6:51:07 PM PST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:38s
+// Tcl Message: update_compile_order -fileset sim_1 
+// WARNING: HEventQueue.dispatchEvent() is taking  9458 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:39s
+// WARNING: HEventQueue.dispatchEvent() is taking  9547 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9488 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:50s
+// WARNING: HEventQueue.dispatchEvent() is taking  9502 ms.
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9930 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9504 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9499 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9576 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9498 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9628 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9505 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9616 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9478 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9595 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9496 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9486 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9488 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9845 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9498 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9479 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9497 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9618 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9497 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9830 ms.
+// Elapsed time: 130 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Failed"); // a (RDIResource.BaseDialog_OK)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Failed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // W.a (dialog16)
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-12188] Failed to read verilog '/home/anbellum/vivaldi/rtl/sinusoid_wave.sv'. ]", 13, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-69] Command failed: Vivado Synthesis failed. ]", 14, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9499 ms.
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 12, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 12, true, false, false, false, false, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. , [Synth 8-2716] syntax error near '-' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 13, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. , [Synth 8-2716] syntax error near '-' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 13, false, false, false, false, false, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9539 ms.
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SystemVerilog]", 3); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// Elapsed time: 10 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SystemVerilog]", 3); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL]", 4); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL]", 4); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// WARNING: HEventQueue.dispatchEvent() is taking  9734 ms.
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, Unreferenced]", 4, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, Unreferenced]", 4); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9496 ms.
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, Unreferenced, uart_rx.v]", 66, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, Unreferenced, uart_tx.v]", 67, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, Unreferenced, config_utils.v]", 68, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, Unreferenced, send_config_tag.v]", 69, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9973 ms.
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 12, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/anbellum/vivaldi/rtl/sinusoid_wave.sv;-;;-;16;-;line;-;48;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,236 MB. GUI used memory: 101 MB. Current time: 2/20/25, 6:54:05 PM PST
+selectCodeEditor("sinusoid_wave.sv", 200, 271); // ae (sinusoid_wave.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9449 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9497 ms.
+selectCodeEditor("sinusoid_wave.sv", 161, 271); // ae (sinusoid_wave.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9476 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9473 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis]", 11, true); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Run Linter]", 12, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// TclEventType: MSGMGR_REFRESH_MSG
+// Tcl Message: synth_design -top nexysVideo -part xc7a200tsbg484-1 -lint  
+// Tcl Message: Command: synth_design -top nexysVideo -part xc7a200tsbg484-1 -lint Starting synth_design Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t' 
+// Tcl Message: INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t' INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes. INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes INFO: [Synth 8-7075] Helper process launched with PID 43153 
+// WARNING: HEventQueue.dispatchEvent() is taking  9476 ms.
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 12326.258 ; gain = 6.477 ; free physical = 6251 ; free virtual = 12557 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Clean up Linter database... 
+// TclEventType: ELABORATE_FAIL
+// TclEventType: LINTER_RUN
+// Tcl Message: ERROR: [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48] ERROR: [Synth 8-2716] syntax error near '-' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48] 
+// Tcl Message: INFO: [Synth 8-10285] module 'sinusoid' is ignored due to previous errors [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:53] INFO: [Synth 8-9084] Verilog file '/home/anbellum/vivaldi/rtl/sinusoid_wave.sv' ignored due to errors 
+// Tcl Message: ERROR: [Synth 8-12188] Failed to read verilog '/home/anbellum/vivaldi/rtl/sinusoid_wave.sv' 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 12326.258 ; gain = 6.477 ; free physical = 6246 ; free virtual = 12552 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: synthesize failed 
+// Tcl Message: INFO: [Common 17-83] Releasing license: Synthesis 
+// Tcl Message: 7 Infos, 6 Warnings, 0 Critical Warnings and 3 Errors encountered. synth_design completed successfully 
+// Tcl Message: ERROR: [Common 17-39] 'synth_design' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'synth_design' failed due to earlier errors.  
+// HOptionPane Error: 'Run Linter Failed. Check Messages for details. (Run Linter Failed)'
+// 'a' command handler elapsed time: 5 seconds
+selectButton("OptionPane.button", "OK", "Run Linter Failed"); // JButton (OptionPane.button)
+// WARNING: HEventQueue.dispatchEvent() is taking  9453 ms.
+selectTab((HResource) null, (HResource) null, "Log", 2); // aa
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-69] Command failed: Vivado Synthesis failed. ]", 18, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-12188] Failed to read verilog '/home/anbellum/vivaldi/rtl/sinusoid_wave.sv'. ]", 17, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9465 ms.
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 16); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2716] syntax error near '[' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. , [Synth 8-2716] syntax error near '-' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:48]. ]", 17, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+selectCodeEditor("sinusoid_wave.sv", 239, 272); // ae (sinusoid_wave.sv)
+selectCodeEditor("sinusoid_wave.sv", 239, 272, false, false, false, false, true); // ae (sinusoid_wave.sv) - Double Click
+selectCodeEditor("sinusoid_wave.sv", 239, 272); // ae (sinusoid_wave.sv)
+typeControlKey((HResource) null, "sinusoid_wave.sv", 'c'); // ae (sinusoid_wave.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9482 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9495 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9447 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9486 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9484 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9472 ms.
+// Elapsed time: 37 seconds
+selectCodeEditor("sinusoid_wave.sv", 336, 313); // ae (sinusoid_wave.sv)
+selectCodeEditor("sinusoid_wave.sv", 296, 258); // ae (sinusoid_wave.sv)
+selectCodeEditor("sinusoid_wave.sv", 296, 258, false, false, false, false, true); // ae (sinusoid_wave.sv) - Double Click
+selectCodeEditor("sinusoid_wave.sv", 296, 258); // ae (sinusoid_wave.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9454 ms.
+selectCodeEditor("sinusoid_wave.sv", 459, 274); // ae (sinusoid_wave.sv)
+typeControlKey((HResource) null, "sinusoid_wave.sv", 'v'); // ae (sinusoid_wave.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9486 ms.
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// WARNING: HEventQueue.dispatchEvent() is taking  9456 ms.
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save", "Save Project"); // a (PAResourceQtoS.SaveProjectUtils_SAVE)
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save", "Save Project"); // a (PAResourceQtoS.SaveProjectUtils_SAVE)
+dismissDialog("Save Project"); // ac.d (dialog17)
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 20m:23s
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog18)
+// Tcl Message: launch_runs synth_1 -jobs 11 
+// HMemoryUtils.trashcanNow. Engine heap size: 6,294 MB. GUI used memory: 100 MB. Current time: 2/20/25, 6:55:55 PM PST
+// WARNING: HEventQueue.dispatchEvent() is taking  9473 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9456 ms.
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Thu Feb 20 18:56:04 2025] Launched synth_1... Run output will be captured here: /home/anbellum/vivaldi/synth/nexysVideo/nexysVideo.runs/synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 12366.812 ; gain = 13.422 ; free physical = 6048 ; free virtual = 12359 
+// 'i' command handler elapsed time: 14 seconds
+// Elapsed time: 10 seconds
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 20m:37s
+// WARNING: HEventQueue.dispatchEvent() is taking  9458 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9484 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9455 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9471 ms.
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  9452 ms.
+// Elapsed time: 28 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Failed"); // a (RDIResource.BaseDialog_OK)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Failed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // W.a (dialog19)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'clk_wizard' not found [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:50]. ]", 16, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv;-;;-;16;-;line;-;50;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  9461 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 6,317 MB. GUI used memory: 103 MB. Current time: 2/20/25, 6:56:40 PM PST
+selectCodeEditor("nexysVideo.sv", 140, 88); // ae (nexysVideo.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// Elapsed time: 10 seconds
+selectCodeEditor("nexysVideo.sv", 151, 114); // ae (nexysVideo.sv)
+selectCodeEditor("nexysVideo.sv", 0, 174); // ae (nexysVideo.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9480 ms.
+selectCodeEditor("nexysVideo.sv", 32, 112); // ae (nexysVideo.sv)
+selectCodeEditor("nexysVideo.sv", 32, 112, false, false, false, false, true); // ae (nexysVideo.sv) - Double Click
+selectCodeEditor("nexysVideo.sv", 53, 172); // ae (nexysVideo.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9484 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9463 ms.
+// Elapsed time: 12 seconds
+selectCodeEditor("nexysVideo.sv", 161, 223); // ae (nexysVideo.sv)
+// WARNING: HEventQueue.dispatchEvent() is taking  9458 ms.
+selectCodeEditor("nexysVideo.sv", 51, 116); // ae (nexysVideo.sv)
+selectCodeEditor("nexysVideo.sv", 51, 116, false, false, false, false, true); // ae (nexysVideo.sv) - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  9470 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9474 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9499 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9486 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9482 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9479 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9470 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9499 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9461 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9493 ms.
+// Elapsed time: 65 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-69] Command failed: Vivado Synthesis failed. ]", 18, false, false, false, false, true, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Popup Trigger
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'clk_wizard' not found [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:50]. ]", 16, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'clk_wizard' not found [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:50]. ]", 16, false, false, false, false, false, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'clk_wizard' not found [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:50]. ]", 16, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'clk_wizard' not found [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:50]. ]", 16, false, false, false, false, true, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Popup Trigger
+// WARNING: HEventQueue.dispatchEvent() is taking  9485 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9473 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9482 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9473 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9452 ms.
+// Elapsed time: 30 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ai (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ai (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// WARNING: HEventQueue.dispatchEvent() is taking  9449 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9475 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9486 ms.
+// Elapsed time: 12 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // aq (RDIResourceCommand.RDICommands_PASTE, edit_paste_menu)
+// Tcl Command: 'read_ip /path/to/clk_wizard.xci; generate_target all [get_files /path/to/clk_wizard.xci]; save_project'
+// Tcl Command: 'read_ip /path/to/clk_wizard.xci'
+// Tcl Message: read_ip /path/to/clk_wizard.xci 
+// Tcl Message: ERROR: [Vivado 12-172] File or Directory '/path/to/clk_wizard.xci' does not exist 
+// WARNING: HEventQueue.dispatchEvent() is taking  9462 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 594, 119, false, false, false, true, false); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR) - Popup Trigger
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 560, 120, false, false, false, true, false); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // aq (RDIResourceCommand.RDICommands_PASTE, edit_paste_menu)
+// WARNING: HEventQueue.dispatchEvent() is taking  9488 ms.
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // aq (RDIResourceCommand.RDICommands_PASTE, edit_paste_menu)
+// Tcl Command: 'read_ip /path/to/clk_wizard.xci; generate_target all [get_files /path/to/clk_wizard.xci]; save_project'
+// Tcl Command: 'read_ip /path/to/clk_wizard.xci'
+// Tcl Message: read_ip /path/to/clk_wizard.xci 
+// Tcl Message: ERROR: [Vivado 12-172] File or Directory '/path/to/clk_wizard.xci' does not exist 
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1, 97); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+// WARNING: HEventQueue.dispatchEvent() is taking  9456 ms.
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+// WARNING: HEventQueue.dispatchEvent() is taking  9482 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9485 ms.
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// WARNING: HEventQueue.dispatchEvent() is taking  9502 ms.
+selectTab(PAResourceItoN.IPCoreView_TABBED_PANE, PAResourceItoN.IPCoreView_INTERFACES, "Interfaces", 1); // g (PAResourceItoN.IPCoreView_TABBED_PANE, IPCoresView)
+selectTab(PAResourceItoN.IPCoreView_TABBED_PANE, PAResourceItoN.IPCoreView_CORES, "Cores", 0); // g (PAResourceItoN.IPCoreView_TABBED_PANE, IPCoresView)
+// WARNING: HEventQueue.dispatchEvent() is taking  9457 ms.
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // an (PAResourceItoN.MainMenuMgr_IP, IP)
+// WARNING: HEventQueue.dispatchEvent() is taking  9487 ms.
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+// WARNING: HEventQueue.dispatchEvent() is taking  9483 ms.
+// Elapsed time: 10 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ai (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ai (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ai (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ai (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ai (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // an (RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, Custom Commands)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // aq (RDIResourceCommand.RDICommands_SETTINGS, settings_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ai (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+expandTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP]", 6); // s (PAResourceQtoS.SettingsDialog_PROJECT_TREE, Project Tree)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP, Repository]", 7, false); // s (PAResourceQtoS.SettingsDialog_PROJECT_TREE, Project Tree)
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL, "Refresh All", "Settings"); // a (PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL)
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL, "Refresh All", "Settings"); // a (PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_ADD_REPOSITORY, "Add Repository", "Settings"); // C (PAResourceQtoS.SettingsProjectIPRepositoryPage_ADD_REPOSITORY, Add Repository)
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_ADD_REPOSITORY, "Add Repository", "Settings"); // C (PAResourceQtoS.SettingsProjectIPRepositoryPage_ADD_REPOSITORY, Add Repository)
+// WARNING: HEventQueue.dispatchEvent() is taking  9487 ms.
+// Elapsed time: 14 seconds
+dismissFolderChooser();
+dismissDialog("Settings"); // e (dialog0)
+// WARNING: HEventQueue.dispatchEvent() is taking  9494 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9491 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9883 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9489 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9954 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9499 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9472 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9944 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9492 ms.

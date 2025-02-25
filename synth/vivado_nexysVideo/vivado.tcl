@@ -1,6 +1,6 @@
 start_gui
 
-create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L
+create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L -force
 
 # add_files -norecurse {}
 # set_property file_type {Memory File} [get_files -all]

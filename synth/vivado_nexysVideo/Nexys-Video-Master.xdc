@@ -117,15 +117,15 @@ set_property -dict { PACKAGE_PIN AA20  IOSTANDARD LVCMOS33 } [get_ports { ja[6] 
 set_property -dict { PACKAGE_PIN AA18  IOSTANDARD LVCMOS33 } [get_ports { ja[7] }]; #IO_L17P_T2_A14_D30_14 Sch=ja[10]
 
 
-## Pmod header JB
-#set_property -dict { PACKAGE_PIN V9    IOSTANDARD LVCMOS33 } [get_ports { jb[0] }]; #IO_L21P_T3_DQS_34 Sch=jb_p[1]
-#set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { jb[1] }]; #IO_L21N_T3_DQS_34 Sch=jb_n[1]
-#set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { jb[2] }]; #IO_L19P_T3_34 Sch=jb_p[2]
-#set_property -dict { PACKAGE_PIN W7    IOSTANDARD LVCMOS33 } [get_ports { jb[3] }]; #IO_L19N_T3_VREF_34 Sch=jb_n[2]
-#set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { jb[4] }]; #IO_L24P_T3_34 Sch=jb_p[3]
-#set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { jb[5] }]; #IO_L24N_T3_34 Sch=jb_n[3]
-#set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { jb[6] }]; #IO_L23P_T3_34 Sch=jb_p[4]
-#set_property -dict { PACKAGE_PIN Y7    IOSTANDARD LVCMOS33 } [get_ports { jb[7] }]; #IO_L23N_T3_34 Sch=jb_n[4]
+# ## Pmod header JB
+set_property -dict { PACKAGE_PIN V9    IOSTANDARD LVCMOS33 } [get_ports { kpyd_col_o[0] }]; #IO_L21P_T3_DQS_34 Sch=jb_p[1]
+set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { kpyd_col_o[1] }]; #IO_L21N_T3_DQS_34 Sch=jb_n[1]
+set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { kpyd_col_o[2] }]; #IO_L19P_T3_34 Sch=jb_p[2]
+set_property -dict { PACKAGE_PIN W7    IOSTANDARD LVCMOS33 } [get_ports { kpyd_col_o[3] }]; #IO_L19N_T3_VREF_34 Sch=jb_n[2]
+set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { kpyd_row_i[0] }]; #IO_L24P_T3_34 Sch=jb_p[3]
+set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { kpyd_row_i[1] }]; #IO_L24N_T3_34 Sch=jb_n[3]
+set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { kpyd_row_i[2] }]; #IO_L23P_T3_34 Sch=jb_p[4]
+set_property -dict { PACKAGE_PIN Y7    IOSTANDARD LVCMOS33 } [get_ports { kpyd_row_i[3] }]; #IO_L23N_T3_34 Sch=jb_n[4]
 
 
 ## Pmod header JC
