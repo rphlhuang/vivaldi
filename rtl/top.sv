@@ -134,10 +134,10 @@ saw_wave_inst (
   .valid_o()
 );
 
-wire signed [23:0] sine_sel = sw[0] ? sine_out_w : 24'd0;
-wire signed [23:0] square_sel = sw[1] ? square_out_w : 24'd0;
-wire signed [23:0] tri_sel = sw[2] ? tri_out_w : 24'd0;
-wire signed [23:0] saw_sel = sw[3] ? saw_out_w : 24'd0;
+wire signed [23:0] sine_sel = (sw[0] && key_pressed) ? sine_out_w : 24'd0;
+wire signed [23:0] square_sel = (sw[1] && key_pressed) ? square_out_w : 24'd0;
+wire signed [23:0] tri_sel = (sw[2] && key_pressed) ? tri_out_w : 24'd0;
+wire signed [23:0] saw_sel = (sw[3] && key_pressed) ? saw_out_w : 24'd0;
 
 assign out_sig_w = (sine_sel + square_sel + tri_sel + saw_sel) >> 2;
 //assign out_sig_w = sine_out_w;
