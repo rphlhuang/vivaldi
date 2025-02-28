@@ -7,4 +7,5 @@ __pycache__
 build
 .vscode/
 .DS_Store
-*.wav
+*.wavthird_party/alexforencich_uart/
+third_party/fpnew/

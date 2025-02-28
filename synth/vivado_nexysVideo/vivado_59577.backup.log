@@ -1,0 +1,1363 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Feb 24 15:03:07 2025
+# Process ID         : 59577
+# Current directory  : /home/anbellum/vivaldi/synth/vivado_nexysVideo
+# Command line       : vivado -mode batch -source vivado.tcl
+# Log file           : /home/anbellum/vivaldi/synth/vivado_nexysVideo/vivado.log
+# Journal file       : /home/anbellum/vivaldi/synth/vivado_nexysVideo/vivado.jou
+# Running On         : Starlight
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 185H
+# CPU Frequency      : 3071.998 MHz
+# CPU Physical cores : 11
+# CPU Logical cores  : 22
+# Host memory        : 16565 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20860 MB
+# Available Virtual  : 19623 MB
+#-----------------------------------------------------------
+source vivado.tcl
+# start_gui
+# create_project nexysVideo nexysVideo -part xc7a200tlsbg484-2L -force
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+create_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:12 . Memory (MB): peak = 8014.051 ; gain = 495.828 ; free physical = 10782 ; free virtual = 17647
+# add_files -norecurse {
+#   ../nexysVideo.sv
+# }
+ERROR: [Vivado 12-172] File or Directory '../nexysVideo.sv' does not exist
+close_project
+open_project /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1160] Copying file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp to /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1 and adding it to utils fileset
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 15:04:57 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+add_files -norecurse /home/anbellum/vivaldi/rtl/top.sv
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 15:08:06 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 15:09:15 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 15:11:03 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2024.2
+  **** Build date : Oct 29 2024 at 10:16:47
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.2.0
+  ****** Build date   : Oct 30 2024-11:19:07
+    **** Build number : 2024.2.1730312347
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210276BD2676B
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+current_hw_device [get_hw_devices xc7a200t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a200t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 8366.215 ; gain = 0.000 ; free physical = 10204 ; free virtual = 17341
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210276BD2676B
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210276BD2676B
+INFO: [Labtools 27-1435] Device xc7a200t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 8396.801 ; gain = 0.000 ; free physical = 10195 ; free virtual = 17341
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 8396.801 ; gain = 0.000 ; free physical = 10193 ; free virtual = 17340
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 8396.801 ; gain = 0.000 ; free physical = 10197 ; free virtual = 17344
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 8396.801 ; gain = 0.000 ; free physical = 10242 ; free virtual = 17388
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 8396.801 ; gain = 0.000 ; free physical = 10269 ; free virtual = 17416
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 15:25:36 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 15:26:23 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 15:27:50 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a200tlsbg484-2L
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8650.422 ; gain = 0.000 ; free physical = 9943 ; free virtual = 17092
+INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'pll/clk_100' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored for synthesis but preserved for implementation.
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 8703.328 ; gain = 0.000 ; free physical = 9879 ; free virtual = 17028
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9149.180 ; gain = 0.000 ; free physical = 9487 ; free virtual = 16636
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 9149.180 ; gain = 0.000 ; free physical = 9487 ; free virtual = 16636
+Read PlaceDB: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 9159.188 ; gain = 10.008 ; free physical = 9487 ; free virtual = 16636
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9159.188 ; gain = 0.000 ; free physical = 9487 ; free virtual = 16636
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.01 . Memory (MB): peak = 9159.188 ; gain = 0.000 ; free physical = 9487 ; free virtual = 16636
+Read Physdb Files: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.04 . Memory (MB): peak = 9159.188 ; gain = 10.008 ; free physical = 9487 ; free virtual = 16636
+Restored from archive | CPU: 0.140000 secs | Memory: 13.785324 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.04 . Memory (MB): peak = 9159.188 ; gain = 10.008 ; free physical = 9487 ; free virtual = 16636
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9159.188 ; gain = 0.000 ; free physical = 9486 ; free virtual = 16635
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+open_run: Time (s): cpu = 00:00:36 ; elapsed = 00:00:14 . Memory (MB): peak = 9533.113 ; gain = 1088.438 ; free physical = 9033 ; free virtual = 16185
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 9535.715 ; gain = 0.000 ; free physical = 8981 ; free virtual = 16134
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210276BD2676B
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+add_files -norecurse {/home/anbellum/vivaldi/rtl/phase_accumulator.sv /home/anbellum/vivaldi/rtl/ram_1r1w_async.sv /home/anbellum/vivaldi/rtl/kpyd2hex.sv}
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+synth_design -top nexysVideo -part xc7a200tlsbg484-2L -lint 
+Command: synth_design -top nexysVideo -part xc7a200tlsbg484-2L -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 120288
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9945.594 ; gain = 310.828 ; free physical = 10329 ; free virtual = 15569
+---------------------------------------------------------------------------------
+Clean up Linter database...
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'EncPos_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder.sv:11]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'LED_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder.sv:12]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'A_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:11]
+WARNING: [Synth 8-8983] 'A_o' was previously declared with a range [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:11]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'B_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:12]
+WARNING: [Synth 8-8983] 'B_o' was previously declared with a range [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:12]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'out_sig_w' is not allowed [/home/anbellum/vivaldi/rtl/top.sv:12]
+INFO: [Synth 8-11241] undeclared symbol 'clk_12', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:27]
+INFO: [Synth 8-11241] undeclared symbol 'A_O', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:30]
+INFO: [Synth 8-11241] undeclared symbol 'B_O', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:31]
+WARNING: [Synth 8-8895] 'clk_12' is already implicitly declared on line 27 [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:48]
+INFO: [Synth 8-11241] undeclared symbol 'out_sig_w', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:94]
+WARNING: [Synth 8-8895] 'out_sig_w' is already implicitly declared on line 94 [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:97]
+INFO: [Synth 8-6157] synthesizing module 'nexysVideo' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'encoder_debounce' [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'encoder_debounce' (1#1) [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'encoder' [/home/anbellum/vivaldi/rtl/encoder.sv:1]
+WARNING: [Synth 8-151] case item 32'b00000000000000000101001000110011 is unreachable [/home/anbellum/vivaldi/rtl/encoder.sv:63]
+WARNING: [Synth 8-567] referenced signal 'EncPos_o' should be on the sensitivity list [/home/anbellum/vivaldi/rtl/encoder.sv:61]
+INFO: [Synth 8-6155] done synthesizing module 'encoder' (2#1) [/home/anbellum/vivaldi/rtl/encoder.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_wizard' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/.Xil/Vivado-59577-Starlight/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wizard' (3#1) [/home/anbellum/vivaldi/synth/vivado_nexysVideo/.Xil/Vivado-59577-Starlight/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'codec_init' [/home/anbellum/vivaldi/rtl/codec_init.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/anbellum/vivaldi/rtl/codec_init.v:29]
+INFO: [Synth 8-638] synthesizing module 'TWICtl' [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:77]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:288]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:321]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:339]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:357]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:375]
+WARNING: [Synth 8-6014] Unused sequential element timeOutCnt_reg was removed.  [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:194]
+WARNING: [Synth 8-6014] Unused sequential element errTypeR_reg was removed.  [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:271]
+INFO: [Synth 8-256] done synthesizing module 'TWICtl' (4#1) [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:77]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/anbellum/vivaldi/rtl/codec_init.v:127]
+WARNING: [Synth 8-6014] Unused sequential element regData1_reg was removed.  [/home/anbellum/vivaldi/rtl/codec_init.v:111]
+WARNING: [Synth 8-6014] Unused sequential element initFbWe_reg was removed.  [/home/anbellum/vivaldi/rtl/codec_init.v:126]
+INFO: [Synth 8-6155] done synthesizing module 'codec_init' (5#1) [/home/anbellum/vivaldi/rtl/codec_init.v:2]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/anbellum/vivaldi/rtl/top.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'kpyd2hex' [/home/anbellum/vivaldi/rtl/kpyd2hex.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ram_1r1w_async' [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:5]
+	Parameter width_p bound to: 32'b00000000000000000000000000000100 
+	Parameter depth_p bound to: 32'b00000000000000000000000000010000 
+	Parameter filename_p bound to: kpyd2hex.hex - type: string 
+INFO: [Synth 8-251] : depth_p is 16, width_p is 4 [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:22]
+INFO: [Synth 8-3876] $readmem data file 'kpyd2hex.hex' is read successfully [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:23]
+INFO: [Synth 8-251] : mem[0] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[1] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[2] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[3] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[4] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[5] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[6] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[7] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[8] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[9] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[10] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[11] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[12] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[13] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[14] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[15] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'ram_1r1w_async' (6#1) [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'kpyd2hex' (7#1) [/home/anbellum/vivaldi/rtl/kpyd2hex.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'phase_accumulator' [/home/anbellum/vivaldi/rtl/phase_accumulator.sv:1]
+	Parameter ACC_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'phase_accumulator' (8#1) [/home/anbellum/vivaldi/rtl/phase_accumulator.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'sinusoid' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-6155] done synthesizing module 'sinusoid' (9#1) [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'square_wave' [/home/anbellum/vivaldi/rtl/square_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-251] square mem[0] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[1] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[2] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[3] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[4] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[5] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[6] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[7] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[8] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[9] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[10] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[11] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[12] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[13] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[14] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[15] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[16] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[17] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[18] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[19] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[20] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[21] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[22] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[23] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[24] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[25] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[26] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[27] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[28] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[29] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[30] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[31] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[32] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[33] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[34] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[35] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[36] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[37] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[38] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[39] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[40] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[41] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[42] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[43] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[44] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[45] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[46] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[47] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[48] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[49] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[50] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[51] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[52] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[53] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[54] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[55] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[56] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[57] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[58] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[59] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[60] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[61] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[62] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[63] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[64] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[65] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[66] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[67] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[68] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[69] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[70] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[71] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[72] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[73] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[74] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[75] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[76] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[77] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[78] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[79] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[80] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[81] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[82] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Common 17-14] Message 'Synth 8-251' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'square_wave' (10#1) [/home/anbellum/vivaldi/rtl/square_wave.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'triangle_wave' [/home/anbellum/vivaldi/rtl/triangle_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-6155] done synthesizing module 'triangle_wave' (11#1) [/home/anbellum/vivaldi/rtl/triangle_wave.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'sawtooth_wave' [/home/anbellum/vivaldi/rtl/sawtooth_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-6155] done synthesizing module 'sawtooth_wave' (12#1) [/home/anbellum/vivaldi/rtl/sawtooth_wave.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'top' (13#1) [/home/anbellum/vivaldi/rtl/top.sv:2]
+INFO: [Synth 8-638] synthesizing module 'i2s_ctrl' [/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'i2s_ctrl' (14#1) [/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd:30]
+WARNING: [Synth 8-3848] Net ac_mclk in module/entity nexysVideo does not have driver. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'nexysVideo' (15#1) [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10018.531 ; gain = 383.766 ; free physical = 10242 ; free virtual = 15485
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Mon Feb 24 16:16:50 2025
+| Host         : Starlight running 64-bit Ubuntu 24.04.2 LTS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++-----------+------------------+--------------+----------+
+| Rule ID   | Severity         | # Violations | # Waived |
++-----------+------------------+--------------+----------+
+| ASSIGN-1  | WARNING          | 1            | 0        |
+| ASSIGN-3  | CRITICAL WARNING | 1            | 0        |
+| ASSIGN-5  | WARNING          | 14           | 0        |
+| ASSIGN-6  | WARNING          | 4            | 0        |
+| ASSIGN-9  | WARNING          | 1            | 0        |
+| ASSIGN-10 | WARNING          | 4            | 0        |
++-----------+------------------+--------------+----------+
+
+
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'ddScl' declared and are not set.
+RTL Name 'ddScl', Hierarchy 'TWICtl', File '/home/anbellum/vivaldi/rtl/TWICtrl.vhd', Line 94.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'fStop' was assigned but not read. 
+RTL Name 'fStop', Hierarchy 'TWICtl', File '/home/anbellum/vivaldi/rtl/TWICtrl.vhd', Line 95.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'errortype' declared and are not set.
+RTL Name 'errortype', Hierarchy 'codec_init', File '/home/anbellum/vivaldi/rtl/codec_init.v', Line 75.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'OE_L_int' declared and are not set.
+RTL Name 'OE_L_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 70.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'OE_R_int' declared and are not set.
+RTL Name 'OE_R_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 70.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q1F' declared and are not set.
+RTL Name 'Q1F', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 48.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q1R' declared and are not set.
+RTL Name 'Q1R', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 47.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q2F' declared and are not set.
+RTL Name 'Q2F', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 48.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q2R' declared and are not set.
+RTL Name 'Q2R', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 47.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q3F' declared and are not set.
+RTL Name 'Q3F', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 48.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q3R' declared and are not set.
+RTL Name 'Q3R', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 47.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'WE_L_int' declared and are not set.
+RTL Name 'WE_L_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 73.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'WE_R_int' declared and are not set.
+RTL Name 'WE_R_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 73.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'MM_I' are not read. First unread bit index is 0. 
+RTL Name 'MM_I', Hierarchy 'i2s_ctrl', File 'i2s_ctrl.vhd', Line 18.
+WARNING: [Synth 37-124] [ASSIGN-5]Some bits in 'in_audioL' are not set. First unset bit index is 0. 
+RTL Name 'in_audioL', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 74.
+WARNING: [Synth 37-124] [ASSIGN-5]Some bits in 'in_audioR' are not set. First unset bit index is 0. 
+RTL Name 'in_audioR', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 75.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'enc_o' was assigned but not read. 
+RTL Name 'enc_o', Hierarchy 'nexysVideo', File '/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv', Line 23.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'out_audioL' was assigned but not read. 
+RTL Name 'out_audioL', Hierarchy 'nexysVideo', File '/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv', Line 76.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'out_audioR' was assigned but not read. 
+RTL Name 'out_audioR', Hierarchy 'nexysVideo', File '/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv', Line 77.
+WARNING: [Synth 37-126] [ASSIGN-9]Some bits in IO 'ac_mclk' are not set. First unset bit index is 0. 
+RTL Name 'ac_mclk', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 14.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'ac_adc_sdata' are not read. First unread bit index is 0. 
+RTL Name 'ac_adc_sdata', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 13.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'ja' are not read. First unread bit index is 7. 
+RTL Name 'ja', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 5.
+WARNING: [Synth 37-78] [ASSIGN-1]Input operands(of sizes 24 24 24 24) of add/sub cluster ending with expression '(((sine_out_w + square_out_w) + tri_out_w) + saw_out_w)' could yield maximum size of 26, but only width of 24 is being used.
+Hierarchy 'top', File '/home/anbellum/vivaldi/rtl/top.sv', Line 86.
+CRITICAL WARNING: [Synth 37-92] [ASSIGN-3]Right-hand side of operator << in expression (1 << ACC_WIDTH) exceeds the range of left-hand side.LHS width: 32, RHS value: 32.
+RTL Name '<<', Hierarchy 'top', File '/home/anbellum/vivaldi/rtl/top.sv', Line 36
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'sw' are not read. First unread bit index is 0. 
+RTL Name 'sw', Hierarchy 'top', File 'top.sv', Line 5.
+INFO: [Synth 37-85] Total of 25 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10018.531 ; gain = 383.766 ; free physical = 10236 ; free virtual = 15480
+INFO: [Common 17-83] Releasing license: Synthesis
+150 Infos, 40 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10018.539 ; gain = 403.773 ; free physical = 10234 ; free virtual = 15480
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3464.512; main = 3137.822; forked = 326.689
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 10930.355; main = 10018.531; forked = 911.824
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+synth_design -top nexysVideo -part xc7a200tlsbg484-2L -lint 
+Command: synth_design -top nexysVideo -part xc7a200tlsbg484-2L -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 10018.539 ; gain = 0.000 ; free physical = 10228 ; free virtual = 15477
+---------------------------------------------------------------------------------
+Clean up Linter database...
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'EncPos_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder.sv:11]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'LED_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder.sv:12]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'A_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:11]
+WARNING: [Synth 8-8983] 'A_o' was previously declared with a range [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:11]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'B_o' is not allowed [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:12]
+WARNING: [Synth 8-8983] 'B_o' was previously declared with a range [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:12]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'out_sig_w' is not allowed [/home/anbellum/vivaldi/rtl/top.sv:12]
+INFO: [Synth 8-11241] undeclared symbol 'clk_12', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:27]
+INFO: [Synth 8-11241] undeclared symbol 'A_O', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:30]
+INFO: [Synth 8-11241] undeclared symbol 'B_O', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:31]
+WARNING: [Synth 8-8895] 'clk_12' is already implicitly declared on line 27 [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:48]
+INFO: [Synth 8-11241] undeclared symbol 'out_sig_w', assumed default net type 'wire' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:94]
+WARNING: [Synth 8-8895] 'out_sig_w' is already implicitly declared on line 94 [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:97]
+INFO: [Synth 8-6157] synthesizing module 'nexysVideo' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'encoder_debounce' [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'encoder_debounce' (1#1) [/home/anbellum/vivaldi/rtl/encoder_debounce.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'encoder' [/home/anbellum/vivaldi/rtl/encoder.sv:1]
+WARNING: [Synth 8-151] case item 32'b00000000000000000101001000110011 is unreachable [/home/anbellum/vivaldi/rtl/encoder.sv:63]
+WARNING: [Synth 8-567] referenced signal 'EncPos_o' should be on the sensitivity list [/home/anbellum/vivaldi/rtl/encoder.sv:61]
+INFO: [Synth 8-6155] done synthesizing module 'encoder' (2#1) [/home/anbellum/vivaldi/rtl/encoder.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_wizard' [/home/anbellum/vivaldi/synth/vivado_nexysVideo/.Xil/Vivado-59577-Starlight/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wizard' (3#1) [/home/anbellum/vivaldi/synth/vivado_nexysVideo/.Xil/Vivado-59577-Starlight/realtime/clk_wizard_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'codec_init' [/home/anbellum/vivaldi/rtl/codec_init.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/anbellum/vivaldi/rtl/codec_init.v:29]
+INFO: [Synth 8-638] synthesizing module 'TWICtl' [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:77]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:288]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:321]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:339]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:357]
+INFO: [Synth 8-226] default block is never used [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:375]
+WARNING: [Synth 8-6014] Unused sequential element timeOutCnt_reg was removed.  [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:194]
+WARNING: [Synth 8-6014] Unused sequential element errTypeR_reg was removed.  [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:271]
+INFO: [Synth 8-256] done synthesizing module 'TWICtl' (4#1) [/home/anbellum/vivaldi/rtl/TWICtrl.vhd:77]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/anbellum/vivaldi/rtl/codec_init.v:127]
+WARNING: [Synth 8-6014] Unused sequential element regData1_reg was removed.  [/home/anbellum/vivaldi/rtl/codec_init.v:111]
+WARNING: [Synth 8-6014] Unused sequential element initFbWe_reg was removed.  [/home/anbellum/vivaldi/rtl/codec_init.v:126]
+INFO: [Synth 8-6155] done synthesizing module 'codec_init' (5#1) [/home/anbellum/vivaldi/rtl/codec_init.v:2]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/anbellum/vivaldi/rtl/top.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'kpyd2hex' [/home/anbellum/vivaldi/rtl/kpyd2hex.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ram_1r1w_async' [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:5]
+	Parameter width_p bound to: 32'b00000000000000000000000000000100 
+	Parameter depth_p bound to: 32'b00000000000000000000000000010000 
+	Parameter filename_p bound to: kpyd2hex.hex - type: string 
+INFO: [Synth 8-251] : depth_p is 16, width_p is 4 [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:22]
+INFO: [Synth 8-3876] $readmem data file 'kpyd2hex.hex' is read successfully [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:23]
+INFO: [Synth 8-251] : mem[0] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[1] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[2] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[3] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[4] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[5] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[6] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[7] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[8] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[9] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[10] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[11] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[12] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[13] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[14] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-251] : mem[15] = x [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'ram_1r1w_async' (6#1) [/home/anbellum/vivaldi/rtl/ram_1r1w_async.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'kpyd2hex' (7#1) [/home/anbellum/vivaldi/rtl/kpyd2hex.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'phase_accumulator' [/home/anbellum/vivaldi/rtl/phase_accumulator.sv:1]
+	Parameter ACC_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'phase_accumulator' (8#1) [/home/anbellum/vivaldi/rtl/phase_accumulator.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'sinusoid' [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-6155] done synthesizing module 'sinusoid' (9#1) [/home/anbellum/vivaldi/rtl/sinusoid_wave.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'square_wave' [/home/anbellum/vivaldi/rtl/square_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-251] square mem[0] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[1] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[2] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[3] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[4] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[5] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[6] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[7] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[8] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[9] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[10] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[11] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[12] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[13] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[14] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[15] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[16] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[17] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[18] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[19] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[20] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[21] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[22] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[23] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[24] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[25] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[26] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[27] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[28] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[29] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[30] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[31] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[32] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[33] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[34] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[35] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[36] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[37] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[38] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[39] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[40] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[41] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[42] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[43] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[44] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[45] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[46] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[47] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[48] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[49] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[50] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[51] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[52] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[53] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[54] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[55] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[56] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[57] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[58] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[59] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[60] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[61] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[62] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[63] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[64] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[65] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[66] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[67] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[68] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[69] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[70] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[71] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[72] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[73] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[74] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[75] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[76] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[77] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[78] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[79] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[80] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[81] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Synth 8-251] square mem[82] = x (binary: 24'bxxxxxxxxxxxxxxxxxxxxxxxx) [/home/anbellum/vivaldi/rtl/square_wave.sv:36]
+INFO: [Common 17-14] Message 'Synth 8-251' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'square_wave' (10#1) [/home/anbellum/vivaldi/rtl/square_wave.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'triangle_wave' [/home/anbellum/vivaldi/rtl/triangle_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-6155] done synthesizing module 'triangle_wave' (11#1) [/home/anbellum/vivaldi/rtl/triangle_wave.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'sawtooth_wave' [/home/anbellum/vivaldi/rtl/sawtooth_wave.sv:2]
+	Parameter width_p bound to: 24 - type: integer 
+	Parameter sampling_freq_p bound to: 48000.000000 - type: double 
+	Parameter note_freq_p bound to: 440.000000 - type: double 
+INFO: [Synth 8-6155] done synthesizing module 'sawtooth_wave' (12#1) [/home/anbellum/vivaldi/rtl/sawtooth_wave.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'top' (13#1) [/home/anbellum/vivaldi/rtl/top.sv:2]
+INFO: [Synth 8-638] synthesizing module 'i2s_ctrl' [/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'i2s_ctrl' (14#1) [/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd:30]
+WARNING: [Synth 8-3848] Net ac_mclk in module/entity nexysVideo does not have driver. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'nexysVideo' (15#1) [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10024.531 ; gain = 5.992 ; free physical = 10220 ; free virtual = 15469
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Mon Feb 24 16:16:58 2025
+| Host         : Starlight running 64-bit Ubuntu 24.04.2 LTS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++-----------+------------------+--------------+----------+
+| Rule ID   | Severity         | # Violations | # Waived |
++-----------+------------------+--------------+----------+
+| ASSIGN-1  | WARNING          | 1            | 0        |
+| ASSIGN-3  | CRITICAL WARNING | 1            | 0        |
+| ASSIGN-5  | WARNING          | 14           | 0        |
+| ASSIGN-6  | WARNING          | 4            | 0        |
+| ASSIGN-9  | WARNING          | 1            | 0        |
+| ASSIGN-10 | WARNING          | 4            | 0        |
++-----------+------------------+--------------+----------+
+
+
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'ddScl' declared and are not set.
+RTL Name 'ddScl', Hierarchy 'TWICtl', File '/home/anbellum/vivaldi/rtl/TWICtrl.vhd', Line 94.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'fStop' was assigned but not read. 
+RTL Name 'fStop', Hierarchy 'TWICtl', File '/home/anbellum/vivaldi/rtl/TWICtrl.vhd', Line 95.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'errortype' declared and are not set.
+RTL Name 'errortype', Hierarchy 'codec_init', File '/home/anbellum/vivaldi/rtl/codec_init.v', Line 75.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'OE_L_int' declared and are not set.
+RTL Name 'OE_L_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 70.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'OE_R_int' declared and are not set.
+RTL Name 'OE_R_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 70.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q1F' declared and are not set.
+RTL Name 'Q1F', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 48.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q1R' declared and are not set.
+RTL Name 'Q1R', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 47.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q2F' declared and are not set.
+RTL Name 'Q2F', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 48.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q2R' declared and are not set.
+RTL Name 'Q2R', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 47.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q3F' declared and are not set.
+RTL Name 'Q3F', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 48.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'Q3R' declared and are not set.
+RTL Name 'Q3R', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 47.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'WE_L_int' declared and are not set.
+RTL Name 'WE_L_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 73.
+WARNING: [Synth 37-95] [ASSIGN-5]Found scalar variable(s) 'WE_R_int' declared and are not set.
+RTL Name 'WE_R_int', Hierarchy 'i2s_ctrl', File '/home/anbellum/vivaldi/rtl/i2s_ctrl.vhd', Line 73.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'MM_I' are not read. First unread bit index is 0. 
+RTL Name 'MM_I', Hierarchy 'i2s_ctrl', File 'i2s_ctrl.vhd', Line 18.
+WARNING: [Synth 37-124] [ASSIGN-5]Some bits in 'in_audioL' are not set. First unset bit index is 0. 
+RTL Name 'in_audioL', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 74.
+WARNING: [Synth 37-124] [ASSIGN-5]Some bits in 'in_audioR' are not set. First unset bit index is 0. 
+RTL Name 'in_audioR', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 75.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'enc_o' was assigned but not read. 
+RTL Name 'enc_o', Hierarchy 'nexysVideo', File '/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv', Line 23.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'out_audioL' was assigned but not read. 
+RTL Name 'out_audioL', Hierarchy 'nexysVideo', File '/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv', Line 76.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'out_audioR' was assigned but not read. 
+RTL Name 'out_audioR', Hierarchy 'nexysVideo', File '/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv', Line 77.
+WARNING: [Synth 37-126] [ASSIGN-9]Some bits in IO 'ac_mclk' are not set. First unset bit index is 0. 
+RTL Name 'ac_mclk', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 14.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'ac_adc_sdata' are not read. First unread bit index is 0. 
+RTL Name 'ac_adc_sdata', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 13.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'ja' are not read. First unread bit index is 7. 
+RTL Name 'ja', Hierarchy 'nexysVideo', File 'nexysVideo.sv', Line 5.
+WARNING: [Synth 37-78] [ASSIGN-1]Input operands(of sizes 24 24 24 24) of add/sub cluster ending with expression '(((sine_out_w + square_out_w) + tri_out_w) + saw_out_w)' could yield maximum size of 26, but only width of 24 is being used.
+Hierarchy 'top', File '/home/anbellum/vivaldi/rtl/top.sv', Line 86.
+CRITICAL WARNING: [Synth 37-92] [ASSIGN-3]Right-hand side of operator << in expression (1 << ACC_WIDTH) exceeds the range of left-hand side.LHS width: 32, RHS value: 32.
+RTL Name '<<', Hierarchy 'top', File '/home/anbellum/vivaldi/rtl/top.sv', Line 36
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'sw' are not read. First unread bit index is 0. 
+RTL Name 'sw', Hierarchy 'top', File 'top.sv', Line 5.
+INFO: [Synth 37-85] Total of 25 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10042.344 ; gain = 23.805 ; free physical = 10209 ; free virtual = 15458
+INFO: [Common 17-83] Releasing license: Synthesis
+148 Infos, 40 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:16:56 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+close_hw_manager
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 16:17:53 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 16:19:12 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2024.2
+  **** Build date : Oct 29 2024 at 10:16:47
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.2.0
+  ****** Build date   : Oct 30 2024-11:19:07
+    **** Build number : 2024.2.1730312347
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210276BD2676B
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+current_hw_device [get_hw_devices xc7a200t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a200t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 10055.359 ; gain = 0.000 ; free physical = 9976 ; free virtual = 15604
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 10055.359 ; gain = 0.000 ; free physical = 9957 ; free virtual = 15597
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 10055.359 ; gain = 0.000 ; free physical = 9937 ; free virtual = 15595
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:23:51 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 16:24:43 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 16:26:12 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 10084.516 ; gain = 0.000 ; free physical = 9842 ; free virtual = 15605
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 10084.516 ; gain = 0.000 ; free physical = 9841 ; free virtual = 15605
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:37:36 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:42:15 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 16:43:09 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:45:13 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 16:46:13 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:49:30 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 16:54:51 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 16:55:54 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 16:57:16 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 10191.566 ; gain = 10.008 ; free physical = 9996 ; free virtual = 15678
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9979 ; free virtual = 15673
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+refresh_design
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9927 ; free virtual = 15618
+INFO: [Netlist 29-17] Analyzing 34 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'pll/clk_100' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored for synthesis but preserved for implementation.
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9914 ; free virtual = 15606
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+Read PlaceDB: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.02 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+Read Physdb Files: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.04 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+Restored from archive | CPU: 0.080000 secs | Memory: 0.692802 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.04 . Memory (MB): peak = 10203.508 ; gain = 0.000 ; free physical = 9891 ; free virtual = 15582
+refresh_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:10 . Memory (MB): peak = 10211.590 ; gain = 8.082 ; free physical = 9864 ; free virtual = 15562
+close_design
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 17:06:19 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 17:07:01 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 17:08:28 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2024.2
+  **** Build date : Oct 29 2024 at 10:16:47
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.2.0
+  ****** Build date   : Oct 30 2024-11:19:07
+    **** Build number : 2024.2.1730312347
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210276BD2676
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210276BD2676
+ERROR: [Labtools 27-101] Refresh failed because target is not opened
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.2.0
+  ****** Build date   : Oct 30 2024-11:19:07
+    **** Build number : 2024.2.1730312347
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210276BD2676B
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+current_hw_device [get_hw_devices xc7a200t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 10211.652 ; gain = 0.000 ; free physical = 9685 ; free virtual = 15501
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 17:19:10 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 17:20:00 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 17:21:16 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 10255.633 ; gain = 0.000 ; free physical = 9766 ; free virtual = 15541
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 17:27:50 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 17:28:44 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 17:30:01 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 10283.637 ; gain = 20.957 ; free physical = 9729 ; free virtual = 15511
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/passthru.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 10283.637 ; gain = 0.000 ; free physical = 9645 ; free virtual = 15427
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 17:42:07 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 17:43:32 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 17:44:36 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 10325.320 ; gain = 0.000 ; free physical = 9631 ; free virtual = 15420
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 17:51:17 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+reset_run synth_1
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 17:52:14 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 17:52:54 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 17:54:26 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 10358.398 ; gain = 0.000 ; free physical = 9635 ; free virtual = 15431
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 18:07:55 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 18:09:41 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 18:10:56 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 18:12:14 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 10384.367 ; gain = 0.000 ; free physical = 10078 ; free virtual = 15560
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 18:39:00 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 18:39:43 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 18:41:03 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 10562.305 ; gain = 0.000 ; free physical = 9975 ; free virtual = 15553
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.srcs/utils_1/imports/synth_1/nexysVideo.dcp with file /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/nexysVideo.dcp
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/rtl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/anbellum/vivaldi/synth/vivado_nexysVideo/nexysVideo.sv:]
+launch_runs synth_1 -jobs 11
+[Mon Feb 24 18:58:35 2025] Launched synth_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 11
+[Mon Feb 24 18:59:22 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+[Mon Feb 24 19:00:36 2025] Launched impl_1...
+Run output will be captured here: /home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/anbellum/vivaldi/synth/vivado_nexysVideo/build/nexysVideo/nexysVideo.runs/impl_1/nexysVideo.bit} [get_hw_devices xc7a200t_0]
+program_hw_devices [get_hw_devices xc7a200t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 10580.375 ; gain = 0.000 ; free physical = 9853 ; free virtual = 15545
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 24 19:21:10 2025...

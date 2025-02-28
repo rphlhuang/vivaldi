@@ -80,9 +80,10 @@ localparam integer DEPTH_LOG2 = 9; // because 512 = 2^9
 logic [31:0] desired_freq;
 
 logic [ACC_WIDTH-1:0] phase_inc;
+
 always_comb begin
-    desired_freq = note_lut[freq];
-    phase_inc = (desired_freq * (1 << ACC_WIDTH)) / SAMPLING_RATE;
+  desired_freq = note_lut[freq];
+  phase_inc = (desired_freq * (64'd1 << ACC_WIDTH)) / SAMPLING_RATE;
 end
 
 wire [DEPTH_LOG2-1:0] shared_addr;

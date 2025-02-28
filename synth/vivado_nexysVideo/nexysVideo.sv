@@ -55,7 +55,7 @@ clk_wizard pll (
 
 logic clk_48kHz;
 logic [31:0] counter;
-localparam div_factor = 128; // 256 for 12.288 MHz -> 48 kHz
+localparam div_factor = 125; // 256 for 12.288 MHz -> 48 kHz
 
 always_ff @(posedge clk_12 or posedge rst_n) begin
     if (rst_n) begin
@@ -78,7 +78,6 @@ wire [23:0] out_audioL;
 wire [23:0] out_audioR;
 
 wire [23:0] out_sig_w;
-
 
 codec_init
 #()
@@ -114,7 +113,7 @@ i2s_ctrl_inst
     .RST_I(rst_n),
     .EN_TX_I(1'b1),
     .EN_RX_I(1'b0),
-    .FS_I(4'b0101), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
+    .FS_I(4'b0011), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
     .MM_I(1'b0),
     .D_L_I(out_sig_w),
     .D_R_I(out_sig_w),  // change to whatever wave 
