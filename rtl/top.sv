@@ -6,7 +6,7 @@ input [3:0] sw,
 input [3:0] kpyd_row_i,
 output [3:0] kpyd_col_o,
 output [7:0] led,
-output  [23:0]  out_sig_w
+output  [23:0]  out_sig_o
 );
 
 wire [3:0] freq;
@@ -139,7 +139,7 @@ wire signed [23:0] square_sel = (sw[1] && key_pressed) ? square_out_w : 24'd0;
 wire signed [23:0] tri_sel = (sw[2] && key_pressed) ? tri_out_w : 24'd0;
 wire signed [23:0] saw_sel = (sw[3] && key_pressed) ? saw_out_w : 24'd0;
 
-assign out_sig_w = (sine_sel + square_sel + tri_sel + saw_sel) >> 2;
+assign out_sig_o = (sine_sel + square_sel + tri_sel + saw_sel) >> 2;
 //assign out_sig_w = sine_out_w;
 
 assign led[7] = shared_addr[DEPTH_LOG2-1]; 

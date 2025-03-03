@@ -1,5 +1,5 @@
 
-TOP := vivaldi_tb
+TOP := top_tb
 
 export YOSYS_DATDIR := $(shell yosys-config --datdir)
 
@@ -18,7 +18,7 @@ lint:
 
 sim:
 	rm -f out.wav
-	verilator lint/verilator.vlt --Mdir ${TOP}_$@_dir -f rtl/rtl.f -f dv/pre_synth.f -f dv/dv.f --binary -Wno-fatal --top ${TOP}
+	verilator lint/verilator.vlt --Mdir ${TOP}_$@_dir -f rtl/rtl.f -f dv/pre_synth.f -f dv/dv.f --binary -Wno-fatal --top ${TOP} --timing
 	./${TOP}_$@_dir/V${TOP} +verilator+rand+reset+2
 
 sim_and_read: sim

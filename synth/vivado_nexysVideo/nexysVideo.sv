@@ -95,7 +95,7 @@ top top_inst (
     .sw(sw),
     .kpyd_row_i(kpyd_row_i),
     .kpyd_col_o(kpyd_col_o),
-    .out_sig_w(out_sig_w),
+    .out_sig_o(out_sig_w),
     .led(led)
 );
 
