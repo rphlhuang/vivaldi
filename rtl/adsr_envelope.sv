@@ -1,16 +1,19 @@
 `timescale 1ns/1ps
 
 module adsr_envelope #(
-    parameter DATA_WIDTH = 16,
-    parameter CLK_PERIOD = 10,
-    parameter ATTACK_TIME = 100,//clk cycles
-    parameter DECAY_TIME = 100,
-    parameter SUSTAIN_LEVEL = 0.5,//sustain levelm what it drops to
-    parameter RELEASE_TIME = 100
+    parameter DATA_WIDTH = 16
+    //parameter ATTACK_TIME = 100,//clk cycles
+    //parameter DECAY_TIME = 100,
+    //parameter SUSTAIN_LEVEL = 0.5,//sustain levelm what it drops to
+    //parameter RELEASE_TIME = 100
 )(
     input logic clk_i,
     input logic rst_i,
     input logic  valid_i,
+    input logic [DATA_WIDTH-1:0] attack_time_i, 
+    input logic [DATA_WIDTH-1:0] decay_time_i, 
+    input logic [DATA_WIDTH-1:0] sustain_level_i,//not exatly sure how this will synthesize for floating point
+    input logic [DATA_WIDTH-1:0] release_time_i,
     output logic ready_o,
     output logic signed [DATA_WIDTH-1:0] envelope_o
 );
@@ -36,8 +39,8 @@ always_ff @(posedge clk_i) begin
                 level <= 0;
             end
             ATTACK: begin
-                if (counter < ATTACK_TIME) begin
-                    level <= (counter * (2**(DATA_WIDTH-1))) / ATTACK_TIME;//sloped line
+                if (counter < attack_time_i) begin
+                    level <= (counter * (2**(DATA_WIDTH-1))) / attack_time_i;//sloped line
                     counter <= counter + 1;
                 end else begin
                     state <= DECAY;
@@ -45,9 +48,9 @@ always_ff @(posedge clk_i) begin
                 end
             end
             DECAY: begin
-                if (counter < DECAY_TIME) begin
-                    //max amplitude reached -
-                    level <= ((2**(DATA_WIDTH-1)) - (counter * (2**(DATA_WIDTH-1) * (1 - SUSTAIN_LEVEL)) / DECAY_TIME));//opposite slope
+                if (counter < decay_time_i) begin
+                    //max amplitude reached 
+                    level <= ((2**(DATA_WIDTH-1)) * (decay_time_i - counter) + sustain_level_i * counter) / decay_time_i;//opposite slope
                     counter <= counter + 1;
                 end else begin
                     state <= SUSTAIN;
@@ -59,12 +62,12 @@ always_ff @(posedge clk_i) begin
                     counter <= 0;
                 end
                 //constanr value
-                level <= SUSTAIN_LEVEL * (2**(DATA_WIDTH-1));
+                level <= sustain_level_i;
             end
             RELEASE: begin
-                if (counter < RELEASE_TIME) begin
+                if (counter < release_time_i) begin
                     //starts at previou sustain level
-                    level <= ((SUSTAIN_LEVEL * (2**(DATA_WIDTH-1))) * (RELEASE_TIME - counter)) / RELEASE_TIME;
+                    level <= (sustain_level_i * (release_time_i - counter)) / release_time_i;
                     counter <= counter + 1;
                 end else begin
                     state <= IDLE;

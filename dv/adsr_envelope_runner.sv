@@ -12,21 +12,19 @@ module adsr_envelope_runner;
   logic valid_i;
   logic ready_o;
   logic signed [DATA_WIDTH-1:0] envelope_o;
+  logic [DATA_WIDTH-1:0] attack_time, decay_time, sustain_level, release_time;
 
-  adsr_envelope #(
-    .DATA_WIDTH(DATA_WIDTH),
-    .CLK_PERIOD(CLK_PERIOD),
-    .ATTACK_TIME(100),//clk cycles
-    .DECAY_TIME(100),
-    .SUSTAIN_LEVEL(0.5),//sustain levelm what it drops to
-    .RELEASE_TIME(100)
-    ) adsr (
-        .clk_i(clk),
-        .rst_i(rst),
-        .valid_i(valid_i),
-        .ready_o(ready_o),
-        .envelope_o(envelope_o)
-    );
+  adsr_envelope #(.DATA_WIDTH(DATA_WIDTH)) uut (
+      .clk_i(clk),
+      .rst_i(rst),
+      .valid_i(valid_i),
+      .attack_time_i(attack_time),    
+      .decay_time_i(decay_time),      
+      .sustain_level_i(sustain_level),
+      .release_time_i(release_time),  
+      .ready_o(ready_o),
+      .envelope_o(envelope_o)
+  );
 
   always #(CLK_PERIOD / 2) clk = ~clk;
 
@@ -45,26 +43,19 @@ module adsr_envelope_runner;
     rst = 1;
     #(CLK_PERIOD * 5);
     rst = 0;
+    attack_time = 16'd100;
+    decay_time = 16'd100;
+    release_time = 16'd100;
+    sustain_level = 16'd16384;//0.5*(2^(16-1)) fixed point
   endtask
 
   task automatic run_test;
     int i;
     #100;
     valid_i = 1'b1;
-    #1_000_000;
+    #10_000;
     valid_i = 1'b0;
-    #1_000_000;
-/*
-    for (i = 0; i < SINE_SAMPLE_SIZE * 20; i++) begin //n periods
-        //input sin
-        signal_i = sine_lut[i % SINE_SAMPLE_SIZE];
-        //modulator with lower frequency
-        modulator_index = i * modulator_frequency;//to make it some scale less frequent than the input signal sin
-        modulator_wave_value = $sin(2 * PI * modulator_index / SINE_SAMPLE_SIZE);
-        modulator_i = modulator_wave_value * 256;//scale amplitude
-        #(CLK_PERIOD);
-    end
-    */
+    #1_000;
 endtask
 
 
