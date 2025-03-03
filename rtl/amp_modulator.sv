@@ -19,8 +19,8 @@ assign b_input = {{(18-DATA_WIDTH){signal_i[DATA_WIDTH-1]}}, signal_i};
 assign d_input = 18'sd1;
 assign a_input = {{(18-DATA_WIDTH){modulator_i[DATA_WIDTH-1]}}, modulator_i};
 
-//XILINX MACRO RUNNERS WONT WORK
-xbip_dsp48_macro_0 U0 (
+//XILINX MACRO RUNNERS INSTANTIATED IN TCL
+xbip_dsp48_macro_0 xbip_dsp48_macro (
     .CLK(clk_i),
     .A(a_input),
     .B(b_input),
