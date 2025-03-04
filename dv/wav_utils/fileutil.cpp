@@ -15,7 +15,7 @@ extern "C" {
 
 
     // open a file for binary writing; returns true if successful
-    int open_file(char * filename) {
+    int open_file(const char * filename) {
         g_out.open(filename, std::ios::binary | std::ios::out);
         if (!g_out.is_open()) {
             std::cerr << "Error: could not open file " << filename << "\n";
