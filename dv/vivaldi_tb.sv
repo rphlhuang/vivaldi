@@ -17,7 +17,7 @@ initial begin
     vivaldi_runner.set_gain_percent(80); 
 
     vivaldi_runner.open_wav_file();
-
+    
     vivaldi_runner.select_sine();
     vivaldi_runner.write_next_num_secs(1);
     vivaldi_runner.select_square();
@@ -26,6 +26,8 @@ initial begin
     vivaldi_runner.write_next_num_secs(1);
     vivaldi_runner.select_sawtooth();
     vivaldi_runner.write_next_num_secs(1);
+    vivaldi_runner.select_noise();
+    vivaldi_runner.write_next_num_secs(5);
 
     vivaldi_runner.close_wav_file();
 

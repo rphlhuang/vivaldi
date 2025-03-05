@@ -1,4 +1,3 @@
-
 module vivaldi_runner;
 
 localparam SAMPLE_FREQUENCY = 44.1 * (10 ** 3); // 44.1kHz typical
@@ -35,7 +34,7 @@ initial begin
 end
 
 // wave mod insts
-logic signed [BITS_PER_SAMPLE - 1:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
+logic signed [BITS_PER_SAMPLE - 1:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, noise_out_w, out_sig_w;
 
 sinusoid
 #(.width_p(BITS_PER_SAMPLE), .sampling_freq_p(SAMPLE_FREQUENCY), .note_freq_p(440.0))
@@ -81,6 +80,15 @@ saw_wave_inst
   .valid_o()
 );
 
+noise_gen
+#()
+noise_gen_inst
+(
+  .clk_i(clk_i),
+  .rst_i(rst_i),
+  .noise_o(noise_out_w)
+);
+
 // output signal mux
 wire signed [BITS_PER_SAMPLE - 1:0] out_audioL;
 wire signed [BITS_PER_SAMPLE - 1:0] out_audioR;
@@ -90,6 +98,7 @@ always_comb begin : comb_signals
     4'b0010: out_sig_w = square_out_w;
     4'b0100: out_sig_w = tri_out_w;
     4'b1000: out_sig_w = saw_out_w;
+    4'b1001: out_sig_w = noise_out_w;
     default: out_sig_w = '0; 
   endcase
 end
@@ -128,6 +137,11 @@ endtask
 task automatic select_sawtooth;
   @(posedge clk_i);
   sw = 4'b1000;
+endtask
+
+task automatic select_noise;
+  @(posedge clk_i);
+  sw = 4'b1001;
 endtask
 
 
