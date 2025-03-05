@@ -87,13 +87,12 @@ module frequency_control
 
 
 always_comb begin
-    data_ol = data_o;
     case (sw_i)
         4'b0001: data_ol = sinusoid_data_o;
         4'b0010: data_ol = square_data_o;
         4'b0100: data_ol = triangle_data_o;
         4'b1000: data_ol = sawtooth_data_o;
-        default: data_ol = data_o;
+        default: data_ol = '0;
     endcase
 end
 
