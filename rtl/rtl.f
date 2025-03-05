@@ -1,5 +1,3 @@
-rtl/config_pkg.sv
-
 rtl/sawtooth_wave.sv
 rtl/sinusoid_wave.sv
 rtl/square_wave.sv
