@@ -7,7 +7,7 @@ localparam NUM_CHANNELS = 2; // 1 for mono, 2 for stereo
 localparam BITS_PER_SAMPLE = 24; // 16 typical, 8 also ok
 localparam BYTES_PER_SAMPLE = BITS_PER_SAMPLE / 8;
 localparam SAMPLE_SIZE = 300;
-localparam TARGET_FREQUENCY = 440;
+localparam TARGET_FREQUENCY = 44000;
 localparam CLOCK_FREQUENCY = 12000000;
 
 
