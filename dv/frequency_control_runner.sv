@@ -2,13 +2,13 @@
 module frequency_control_runner;
 
 localparam CLOCK_DIV = CLOCK_FREQUENCY/(SAMPLE_SIZE*TARGET_FREQUENCY);
-localparam SAMPLE_FREQUENCY = 44.1 * (10 ** 3); // 44.1kHz typical
+localparam SAMPLE_FREQUENCY = CLOCK_FREQUENCY/CLOCK_DIV; 
 localparam NUM_CHANNELS = 2; // 1 for mono, 2 for stereo
 localparam BITS_PER_SAMPLE = 24; // 16 typical, 8 also ok
 localparam BYTES_PER_SAMPLE = BITS_PER_SAMPLE / 8;
 localparam SAMPLE_SIZE = 300;
-localparam TARGET_FREQUENCY = 44000;
-localparam CLOCK_FREQUENCY = 12000000;
+localparam TARGET_FREQUENCY = 4400;
+localparam CLOCK_FREQUENCY = 12_000_000;
 
 
 import "DPI-C" context function void hello();
