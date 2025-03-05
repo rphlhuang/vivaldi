@@ -6,7 +6,7 @@ input [3:0] sw,
 input [3:0] kpyd_row_i,
 output [3:0] kpyd_col_o,
 output [7:0] led,
-output  [23:0]  out_sig_o
+output [23:0] out_sig_o
 );
 
 wire [3:0] freq;
@@ -158,11 +158,7 @@ always_comb begin : comb_signals
   endcase
 end
 
-assign out_sig_w = out_sig_l;
-
-//assign out_sig_w = sine_sel + square_sel + tri_sel + saw_sel;
-//assign out_sig_w = sine_out_w;
-
+assign out_sig_o = out_sig_l;
 assign led[7] = shared_addr[DEPTH_LOG2-1]; 
 assign led[6:4] = freq[3:1]; 
 assign led[3:0] = kpyd_col_o;  
