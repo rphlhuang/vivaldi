@@ -11,7 +11,7 @@ output  [23:0]  out_sig_o
 
 wire [3:0] freq;
 
-wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w, out_sig_w;
+wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w;
 
 logic [15:0] clk_div;
 wire slow_clk;
@@ -134,13 +134,21 @@ saw_wave_inst (
   .valid_o()
 );
 
+always_comb begin
+  if (rst_n) begin
+    led[7:0] = 8'b0;
+  end else begin
+    led[7:0] = {kpyd_row_i, kpyd_col_o};
+  end
+end
+
 wire signed [23:0] sine_sel = (sw[0] && key_pressed) ? sine_out_w : 24'd0;
 wire signed [23:0] square_sel = (sw[1] && key_pressed) ? square_out_w : 24'd0;
 wire signed [23:0] tri_sel = (sw[2] && key_pressed) ? tri_out_w : 24'd0;
 wire signed [23:0] saw_sel = (sw[3] && key_pressed) ? saw_out_w : 24'd0;
 
 assign out_sig_o = (sine_sel + square_sel + tri_sel + saw_sel) >> 2;
-//assign out_sig_w = sine_out_w;
+// assign out_sig_o = sine_out_w;
 
 assign led[7] = shared_addr[DEPTH_LOG2-1]; 
 assign led[6:4] = freq[3:1]; 

@@ -1,4 +1,4 @@
-
+`timescale 1ns / 1ps
 module top_runner;
 
 localparam SAMPLE_FREQUENCY = 44.1 * (10 ** 3); // 44.1kHz typical
@@ -23,7 +23,7 @@ initial begin
 end
 
 // clocks
-localparam realtime ClockPeriod = 20.833ns; // 48Mhz
+localparam realtime ClockPeriod = 20833ns; // 48khz
 initial begin
   clk_i = 0;
   forever begin
@@ -32,7 +32,6 @@ initial begin
   end
 end
 
-wire clk_48kHz;
 logic rst_n;
 logic [3:0] sw;
 logic [3:0] kpyd_row_i;
@@ -40,7 +39,15 @@ logic [3:0] kpyd_col_o;
 logic [7:0] led;
 logic signed [23:0] out_sig;
 
-top top_inst (.*, .out_sig_o(out_sig));
+top top_inst (
+    .rst_n(rst_i), 
+    .clk_48kHz(clk_i),
+    .kpyd_row_i('0),
+    .kpyd_col_o(),
+    .led(led),
+    .sw(sw),
+    .out_sig_o(out_sig)
+);
 
 logic signed [23:0] out_audioL, out_audioR;
 assign out_audioL = out_sig;
@@ -54,6 +61,8 @@ endtask
 task automatic reset;
   rst_i = 1;
   sw = 4'b0000;
+  top_inst.freq = 4'b0000;
+  kpyd_row_i = 4'b0000;
   @(posedge clk_i);
   @(posedge clk_i);
   rst_i = 0;

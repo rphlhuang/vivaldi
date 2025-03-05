@@ -24,11 +24,6 @@ module ram_1r1w_async
         for (int i = 0; i < depth_p; i++) begin
       $display("%m: mem[%0d] = %h", i, mem[i]);
     end
-     // synopsys translate_off
-    for (int i = 0; i < depth_p; i++) begin
-      $dumpvars(0, mem[i]);
-    end
-    // synopsys translate_on
   end
 
   assign rd_data_o = mem[rd_addr_i];

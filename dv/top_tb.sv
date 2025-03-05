@@ -1,6 +1,9 @@
+`timescale 1ns / 1ps
 module top_tb;
 
 top_runner top_runner ();
+
+logic a;
 
 initial begin
     $dumpfile("dump.fst");

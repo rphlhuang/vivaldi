@@ -10,7 +10,7 @@ module phase_accumulator
 
   logic [ACC_WIDTH-1:0] phase;
 
-  always_ff @(posedge clk or posedge reset) begin
+  always_ff @(posedge clk) begin
     if (reset)
       phase <= 0;
     else

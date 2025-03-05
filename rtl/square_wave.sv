@@ -30,7 +30,5 @@ parameter depth_p = 512)
     mem[0] = '0;
     for (int i = 1; i < depth_p; i++)
       mem[i] = (i < (depth_p / 2)) ? max_val_lp : -max_val_lp;
-    for (int i = 0; i < depth_p; i++)
-      $display("square mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
   end
 endmodule

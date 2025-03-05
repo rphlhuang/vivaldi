@@ -9,3 +9,4 @@ build
 .DS_Store
 *.wavthird_party/alexforencich_uart/
 third_party/fpnew/
+out.wav
