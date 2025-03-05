@@ -7,6 +7,11 @@ dv/frequency_control_tb.sv
 dv/wav_utils/wavewriter.sv
 dv/wav_utils/fileutil.cpp
 
+dv/amp_modulator_tb.sv
+dv/amp_modulator_runner.sv
+dv/adsr_envelope_tb.sv
+dv/adsr_envelope_runner.sv
+
 --timing
 -j 0
 -Wall
