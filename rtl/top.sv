@@ -10,21 +10,22 @@ output  [23:0]  out_sig_o
 );
 
 wire [3:0] freq;
+logic [23:0] out_sig_l;
 
 wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w;
 
-logic [15:0] clk_div;
+logic [5:0] clk_div; 
 wire slow_clk;
 
 always_ff @(posedge clk_48kHz) begin
-  if (rst_n || clk_div == 16'd1023) begin
-    clk_div <= 16'd0;
+  if (rst_n || clk_div == 6'd15) begin
+    clk_div <= 6'd0;
   end else begin
     clk_div <= clk_div + 1'b1;
   end
 end
 
-assign slow_clk = (clk_div == 16'd1023);  
+assign slow_clk = (clk_div == 6'd15); 
 
 logic [3:0] col_select;
 
@@ -74,8 +75,8 @@ end
 localparam integer SAMPLING_RATE = 48000;
 localparam integer ACC_WIDTH     = 32;
 
-localparam integer DEPTH = 512;
-localparam integer DEPTH_LOG2 = 9; // because 512 = 2^9
+localparam integer DEPTH = 1024;
+localparam integer DEPTH_LOG2 = 10; 
 
 logic [31:0] desired_freq;
 
@@ -142,13 +143,25 @@ always_comb begin
   end
 end
 
-wire signed [23:0] sine_sel = (sw[0] && key_pressed) ? sine_out_w : 24'd0;
-wire signed [23:0] square_sel = (sw[1] && key_pressed) ? square_out_w : 24'd0;
-wire signed [23:0] tri_sel = (sw[2] && key_pressed) ? tri_out_w : 24'd0;
-wire signed [23:0] saw_sel = (sw[3] && key_pressed) ? saw_out_w : 24'd0;
+wire signed [23:0] sine_sel = (key_pressed) ? sine_out_w : 24'd0;
+wire signed [23:0] square_sel = (key_pressed) ? square_out_w : 24'd0;
+wire signed [23:0] tri_sel = (key_pressed) ? tri_out_w : 24'd0;
+wire signed [23:0] saw_sel = (key_pressed) ? saw_out_w : 24'd0;
 
-assign out_sig_o = (sine_sel + square_sel + tri_sel + saw_sel) >> 2;
-// assign out_sig_o = sine_out_w;
+always_comb begin : comb_signals
+  case (sw)
+    4'b0001: out_sig_l = sine_sel;
+    4'b0010: out_sig_l = square_sel;
+    4'b0100: out_sig_l = tri_sel;
+    4'b1000: out_sig_l = saw_sel;
+    default: out_sig_l = '0; 
+  endcase
+end
+
+assign out_sig_w = out_sig_l;
+
+//assign out_sig_w = sine_sel + square_sel + tri_sel + saw_sel;
+//assign out_sig_w = sine_out_w;
 
 assign led[7] = shared_addr[DEPTH_LOG2-1]; 
 assign led[6:4] = freq[3:1]; 
