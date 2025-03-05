@@ -1,4 +1,7 @@
-module noise_gen(
+`timescale 1ns / 1ps
+module noise_gen
+#()
+(
     input [0:0] clk_i,
     input [0:0] rst_i,
     output [23:0] noise_o

@@ -1,9 +1,10 @@
-rtl/config_pkg.sv
-
 rtl/sawtooth_wave.sv
 rtl/sinusoid_wave.sv
 rtl/square_wave.sv
 rtl/triangle_wave.sv
 rtl/wave_counter.sv
 rtl/codec_init.v
+rtl/amp_modulator.sv
+rtl/adsr_envelope.sv
 rtl/frequency_control.sv
+rtl/noise_gen.sv
