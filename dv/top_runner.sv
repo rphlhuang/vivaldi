@@ -32,7 +32,6 @@ initial begin
   end
 end
 
-logic rst_n;
 logic [3:0] sw;
 logic [3:0] kpyd_row_i;
 logic [3:0] kpyd_col_o;
@@ -40,7 +39,7 @@ logic [7:0] led;
 logic signed [23:0] out_sig;
 
 top top_inst (
-    .rst_n(rst_i), 
+    .rst_i(rst_i), 
     .clk_48kHz(clk_i),
     .kpyd_row_i('0),
     .kpyd_col_o(),

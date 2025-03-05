@@ -1,7 +1,7 @@
 
 module top (
 input clk_48kHz,
-input rst_n,
+input rst_i,
 input [3:0] sw,
 input [3:0] kpyd_row_i,
 output [3:0] kpyd_col_o,
@@ -18,7 +18,7 @@ logic [5:0] clk_div;
 wire slow_clk;
 
 always_ff @(posedge clk_48kHz) begin
-  if (rst_n || clk_div == 6'd15) begin
+  if (rst_i || clk_div == 6'd15) begin
     clk_div <= 6'd0;
   end else begin
     clk_div <= clk_div + 1'b1;
@@ -30,7 +30,7 @@ assign slow_clk = (clk_div == 6'd15);
 logic [3:0] col_select;
 
 always_ff @(posedge clk_48kHz) begin
-  if (rst_n) begin
+  if (rst_i) begin
     col_select <= 4'b0001;  
   end else if (slow_clk) begin
     col_select <= {col_select[2:0], col_select[3]};  
@@ -47,7 +47,7 @@ wire [7:0] kpyd = {~kpyd_row_i, ~kpyd_col_o};
 kpyd2hex top_inst (
     .kpyd_i(kpyd),
     .clk_i(clk_48kHz),
-    .reset_i(rst_n),
+    .reset_i(rst_i),
     .hex_o(freq[3:0])
 );
 
@@ -94,7 +94,7 @@ phase_accumulator #(
   .ADDR_WIDTH(DEPTH_LOG2)
 ) phase_acc_inst (
   .clk(clk_48kHz),
-  .reset(rst_n),
+  .reset(rst_i),
   .phase_inc(phase_inc),
   .addr(shared_addr)
 );
@@ -102,7 +102,7 @@ phase_accumulator #(
 sinusoid #(.width_p(24), .depth_p(DEPTH))
 sine_wave_inst (
   .clk_i(clk_48kHz),
-  .reset_i(rst_n),
+  .reset_i(rst_i),
   .addr_i(shared_addr),
   .data_o(sine_out_w),
   .valid_o()
@@ -111,7 +111,7 @@ sine_wave_inst (
 square_wave #(.width_p(24), .depth_p(DEPTH))
 square_wave_inst (
   .clk_i(clk_48kHz),
-  .reset_i(rst_n),
+  .reset_i(rst_i),
   .addr_i(shared_addr),
   .data_o(square_out_w),
   .valid_o()
@@ -120,7 +120,7 @@ square_wave_inst (
 triangle_wave #(.width_p(24), .depth_p(DEPTH))
 triangle_wave_inst (
   .clk_i(clk_48kHz),
-  .reset_i(rst_n),
+  .reset_i(rst_i),
   .addr_i(shared_addr),
   .data_o(tri_out_w),
   .valid_o()
@@ -129,14 +129,14 @@ triangle_wave_inst (
 sawtooth_wave #(.width_p(24), .depth_p(DEPTH))
 saw_wave_inst (
   .clk_i(clk_48kHz),
-  .reset_i(rst_n),
+  .reset_i(rst_i),
   .addr_i(shared_addr),
   .data_o(saw_out_w),
   .valid_o()
 );
 
 always_comb begin
-  if (rst_n) begin
+  if (rst_i) begin
     led[7:0] = 8'b0;
   end else begin
     led[7:0] = {kpyd_row_i, kpyd_col_o};

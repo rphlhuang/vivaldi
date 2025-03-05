@@ -91,7 +91,7 @@ codec_init_inst
 
 top top_inst (
     .clk_48kHz(clk_48kHz),
-    .rst_n(rst_n),
+    .rst_i(rst_n),
     .sw(sw),
     .kpyd_row_i(kpyd_row_i),
     .kpyd_col_o(kpyd_col_o),
