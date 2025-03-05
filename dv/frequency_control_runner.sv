@@ -2,7 +2,7 @@
 module frequency_control_runner;
 
 localparam CLOCK_DIV = CLOCK_FREQUENCY/(SAMPLE_SIZE*TARGET_FREQUENCY);
-localparam SAMPLE_FREQUENCY = CLOCK_FREQUENCY/CLOCK_DIV; 
+localparam SAMPLE_FREQUENCY = CLOCK_FREQUENCY/CLOCK_DIV; //sample frequency changed
 localparam NUM_CHANNELS = 2; // 1 for mono, 2 for stereo
 localparam BITS_PER_SAMPLE = 24; // 16 typical, 8 also ok
 localparam BYTES_PER_SAMPLE = BITS_PER_SAMPLE / 8;
