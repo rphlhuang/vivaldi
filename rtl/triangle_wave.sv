@@ -39,10 +39,28 @@ module triangle_wave
 
   // Memory initialization
   // Maximum value sin can get accounting for the sign bit
-  localparam real max_val_lp = (1 << (width_p - 1)) - 1;
-  localparam real increment_val_lp = max_val_lp/(depth_p/2);
-  initial begin
-    for (int i = 0; i < depth_p; i++)
-      mem[i] = (i < (depth_p / 2)) ? (i*increment_val_lp) : (max_val_lp -(increment_val_lp*(i-(depth_p/2))));
+localparam real max_val_lp = (1 << (width_p - 1)) - 1;  
+localparam int half_depth_p = depth_p / 2;
+localparam int increment_val_lp = $rtoi(max_val_lp / half_depth_p);  // Step size per sample
+integer temp_val;
+
+initial begin
+  for (int i = 0; i < depth_p; i++) begin
+    if (i < half_depth_p) begin
+      temp_val = (i+1) * increment_val_lp;
+      mem[i] = temp_val[width_p-1:0]; // Truncate safely
+    end 
+    else begin
+      temp_val = (depth_p - i) * increment_val_lp;
+      mem[i] = temp_val[width_p-1:0]; // Truncate safely
+    end
   end
+
+  // Ensure seamless wrap-around
+  mem[0] = 0;
+  mem[depth_p - 1] = 0;  
+
+    for (int i = 0; i < depth_p; i++)
+      $display("triangle mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
+end
 endmodule

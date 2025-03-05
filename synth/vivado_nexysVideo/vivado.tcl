@@ -29,7 +29,7 @@ set_property -dict [list \
 ] [get_ips clk_wizard]
 
 #dsp48e1 ip macro, tcl log generated from vivado ip catalog
-create_ip -name xbip_dsp48_macro -vendor xilinx.com -library ip -version 3.0 -module_name xbip_dsp48_macro_0
+create_ip -name dsp_macro -vendor xilinx.com -library ip -version 1.0 -module_name xbip_dsp48_macro_0
 set_property -dict [list \
 CONFIG.instruction1 {B*(A+D)} \
 CONFIG.pipeline_options {By_Tier} \
