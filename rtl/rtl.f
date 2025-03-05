@@ -6,3 +6,4 @@ rtl/square_wave.sv
 rtl/triangle_wave.sv
 rtl/wave_counter.sv
 rtl/codec_init.v
+rtl/frequency_control.sv

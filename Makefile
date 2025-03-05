@@ -1,5 +1,5 @@
 
-TOP := vivaldi_tb
+TOP := frequency_control_tb
 
 export YOSYS_DATDIR := $(shell yosys-config --datdir)
 

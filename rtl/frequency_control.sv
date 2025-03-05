@@ -15,7 +15,7 @@ module frequency_control
     logic [15:0] clk_div_l;
     logic [15:0] clk_slow_counter_l;
 
-    wire [width_p-1:0] sinusoid_data_o, square_data_o, triange_data_o, sawtooth_data_o;
+    wire [width_p-1:0] sinusoid_data_o, square_data_o, triangle_data_o, sawtooth_data_o;
     logic [width_p-1:0] data_ol;
 
     // calculate clock div when the freq_ctrl_i input changes
@@ -41,47 +41,47 @@ module frequency_control
 
 
     sinusoid #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*note_freq_p)
-   ,.note_freq_p(note_freq_p)
+   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.note_freq_p(wave_std_freq_lp)
    )
-   sinudoid_inst // sinudoid
+   sinusoid_inst 
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i(ready_i && (clk_slow_counter_l === clk_div_l))
+  ,.ready_i((clk_slow_counter_l === clk_div_l))
   ,.data_o(sinusoid_data_o)
   ,.valid_o());
 
     square_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*note_freq_p)
-   ,.note_freq_p(note_freq_p)
+   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.note_freq_p(wave_std_freq_lp)
    )
    square_inst
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i(ready_i && (clk_slow_counter_l === clk_div_l))
+  ,.ready_i( (clk_slow_counter_l === clk_div_l))
   ,.data_o(square_data_o)
   ,.valid_o());
 
     triangle_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*note_freq_p)
-   ,.note_freq_p(note_freq_p)
+   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.note_freq_p(wave_std_freq_lp)
    )
    triangle_inst
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i(ready_i && (clk_slow_counter_l === clk_div_l))
+  ,.ready_i((clk_slow_counter_l === clk_div_l))
   ,.data_o(triangle_data_o)
   ,.valid_o());    
 
 
     sawtooth_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*note_freq_p)
-   ,.note_freq_p(note_freq_p)
+   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.note_freq_p(wave_std_freq_lp)
    )
    sawtooth_inst
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i(ready_i && (clk_slow_counter_l === clk_div_l))
+  ,.ready_i((clk_slow_counter_l === clk_div_l))
   ,.data_o(sawtooth_data_o)
   ,.valid_o());
 
@@ -91,7 +91,7 @@ always_comb begin
     case (sw_i)
         4'b0001: data_ol = sinusoid_data_o;
         4'b0010: data_ol = square_data_o;
-        4'b0100: data_ol = triange_data_o;
+        4'b0100: data_ol = triangle_data_o;
         4'b1000: data_ol = sawtooth_data_o;
         default: data_ol = data_o;
     endcase
