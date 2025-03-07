@@ -21,7 +21,7 @@ module encoder
 				 currState_l <= "idle";
 				 EncPos_o <= 5'b00000;
 			 end
-			 // detect if the shaft is rotated to right or left
+			 // detect if rotated to right or left
 			 // right: add 1 to the position at each click
 			 // left: subtract 1 from the position at each click
 			 else begin
@@ -55,9 +55,6 @@ module encoder
 	 end
 
 
-	 // *******************************************
-	 //  					  Next State
-	 // *******************************************
 	 always@(currState_l or A_i or B_i)
 	 begin
 				 case (currState_l)
@@ -77,7 +74,6 @@ module encoder
 							 end
 					  end
 				     // start of right cycle
-				     // R1
 					  "R1" : begin
 							 LED_o <= {2'b01, 1'b0, EncPos_o};
 
@@ -91,7 +87,6 @@ module encoder
 								 nextState_l <= "R1";
 							 end
 					  end
-					  // R2
 					  "R2" : begin
 							 LED_o <= {2'b01, 1'b0, EncPos_o};
 
@@ -105,7 +100,6 @@ module encoder
 								 nextState_l <= "R2";
 							 end
 					  end
-					  // R3
 					  "R3" : begin
 							 LED_o <= {2'b01, 1'b0, EncPos_o};
 
@@ -119,7 +113,6 @@ module encoder
 								 nextState_l <= "R3";
 							 end
 					  end
-					  // R3
 					  "R3" : begin
 							 LED_o <= {2'b01, 1'b0, EncPos_o};
 
@@ -133,13 +126,11 @@ module encoder
 								 nextState_l <= "R3";
 							 end
 					  end
-					  // Add
 					  "add" : begin
 							 LED_o <= {2'b01, 1'b0, EncPos_o};
 							 nextState_l <= "idle";
 					  end
    				  // Start of left cycle
-                 // L1
 					  "L1" : begin
 							 LED_o <= {2'b10, 1'b0, EncPos_o};
 
@@ -153,7 +144,6 @@ module encoder
 								 nextState_l <= "L1";
 							 end
 					  end
-                 // L2
 					  "L2" : begin
 							 LED_o <= {2'b10, 1'b0, EncPos_o};
 
@@ -167,7 +157,6 @@ module encoder
 								 nextState_l <= "L2";
 							 end
 					  end
-                 // L3
 					  "L3" : begin
 							 LED_o <= {2'b10, 1'b0, EncPos_o};
 
@@ -181,12 +170,10 @@ module encoder
 								 nextState_l <= "L3";
 							 end
 					  end
-                 // Sub
 					  "sub" : begin
 							 LED_o <= {2'b10, 1'b0, EncPos_o};
 							 nextState_l <= "idle";
 					  end
-					  //  Default
 					  default : begin
 							 LED_o <= {2'b11, 1'b0, EncPos_o};
 							 nextState_l <= "idle";
