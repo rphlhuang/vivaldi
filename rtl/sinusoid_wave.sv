@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module sinusoid
+module sinusoid_wave
   #(parameter width_p = 12
    ,parameter real sampling_freq_p = 44.1 * 10 ** 3
    ,parameter real note_freq_p = 440.0
@@ -7,6 +7,7 @@ module sinusoid
   (input [0:0] clk_i
   ,input [0:0] reset_i
   ,input [0:0] ready_i
+  ,input [0:0] valid_i
   ,output signed [width_p-1:0] data_o
   ,output [0:0] valid_o
    );
@@ -23,7 +24,7 @@ module sinusoid
   addr_counter_inst
     (.clk_i(clk_i)
     ,.reset_i(reset_i)
-    ,.up_i(ready_i)
+    ,.up_i(ready_i&valid_i)
     ,.down_i(1'b0)
     ,.count_o(addr_w));
 
