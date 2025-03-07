@@ -61,7 +61,7 @@ initial begin
   mem[0] = 0;
   mem[depth_p - 1] = 0;  
 
-    for (int i = 0; i < depth_p; i++)
-      $display("triangle mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
+    // for (int i = 0; i < depth_p; i++)
+    //   $display("triangle mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
 end
 endmodule

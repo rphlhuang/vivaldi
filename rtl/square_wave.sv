@@ -46,7 +46,7 @@ module square_wave
     for (int i = 1; i < depth_p; i++)
       mem[i] = (i < (depth_p / 2)) ? max_val_lp : max_val_lp * -1;
 
-    for (int i = 0; i < depth_p; i++)
-      $display("square mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
+    // for (int i = 0; i < depth_p; i++)
+    //   $display("square mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
   end
 endmodule

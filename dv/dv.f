@@ -1,6 +1,3 @@
-dv/vivaldi_tb.sv
-dv/vivaldi_runner.sv
-
 dv/frequency_control_runner.sv
 dv/frequency_control_tb.sv
 

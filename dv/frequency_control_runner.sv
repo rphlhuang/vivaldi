@@ -123,9 +123,9 @@ task automatic write_next_num_secs(input int num_secs);
       write_data_bytes(out_audioR, BYTES_PER_SAMPLE, 1);
     end
 
-    if (sw === 4'b0001 && i < 1000) begin
-      $display("Writing %d to .wav (binary %b)", out_audioL, out_audioL);
-    end
+    // if (sw === 4'b0001 && i < 1000) begin
+    //   $display("Writing %d to .wav (binary %b)", out_audioL, out_audioL);
+    // end
 
     @(posedge clk_i);
   end

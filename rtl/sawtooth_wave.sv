@@ -53,7 +53,7 @@ module sawtooth_wave
     mem[depth_p-1] = mem[0];
 
 
-    for (int i = 0; i < depth_p; i++)
-      $display("sawtooth mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
+    // for (int i = 0; i < depth_p; i++)
+    //   $display("sawtooth mem[%0d] = %0d (binary: %b)", i, mem[i], mem[i]);
   end
 endmodule
