@@ -42,17 +42,17 @@ module triangle_wave
   // Maximum value sin can get accounting for the sign bit
 localparam real max_val_lp = (1 << (width_p - 1)) - 1;  
 localparam int half_depth_p = depth_p / 2;
-localparam int increment_val_lp = $rtoi(max_val_lp / half_depth_p);  // Step size per sample
+localparam int increment_val_lp = $rtoi(max_val_lp / depth_p);  // Step size per sample
 integer temp_val;
 
 initial begin
   for (int i = 0; i < depth_p; i++) begin
     if (i < half_depth_p) begin
-      temp_val = (i+1) * increment_val_lp;
+      temp_val = (i+1) * increment_val_lp -max_val_lp;
       mem[i] = temp_val[width_p-1:0]; // Truncate safely
     end 
     else begin
-      temp_val = (depth_p - i) * increment_val_lp;
+      temp_val = max_val_lp - ((depth_p - i) * increment_val_lp);
       mem[i] = temp_val[width_p-1:0]; // Truncate safely
     end
   end

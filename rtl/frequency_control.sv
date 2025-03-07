@@ -40,7 +40,7 @@ module frequency_control
     end
 
 
-    sinusoid #(.width_p(width_p)
+    sinusoid_wave #(.width_p(width_p)
    ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
    ,.note_freq_p(wave_std_freq_lp)
    )
@@ -49,6 +49,7 @@ module frequency_control
   ,.reset_i(reset_i)
   ,.ready_i((clk_slow_counter_l === clk_div_l))
   ,.data_o(sinusoid_data_o)
+  ,.valid_i(1'b1)
   ,.valid_o());
 
     square_wave #(.width_p(width_p)
@@ -59,6 +60,7 @@ module frequency_control
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
   ,.ready_i( (clk_slow_counter_l === clk_div_l))
+    ,.valid_i(1'b1)
   ,.data_o(square_data_o)
   ,.valid_o());
 
@@ -71,6 +73,7 @@ module frequency_control
   ,.reset_i(reset_i)
   ,.ready_i((clk_slow_counter_l === clk_div_l))
   ,.data_o(triangle_data_o)
+  ,.valid_i(1'b1)
   ,.valid_o());    
 
 
@@ -83,6 +86,7 @@ module frequency_control
   ,.reset_i(reset_i)
   ,.ready_i((clk_slow_counter_l === clk_div_l))
   ,.data_o(sawtooth_data_o)
+  ,.valid_i(1'b1)
   ,.valid_o());
 
 

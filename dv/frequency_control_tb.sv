@@ -19,19 +19,19 @@ initial begin
     frequency_control_runner.open_wav_file();
 
     frequency_control_runner.select_sine();
-    frequency_control_runner.write_next_num_secs(10);
+    frequency_control_runner.write_next_num_secs(5);
 
-    // repeat(100) frequency_control_runner.reset();
-    // frequency_control_runner.select_square();
-    // frequency_control_runner.write_next_num_secs(5);
+    repeat(100) frequency_control_runner.reset();
+    frequency_control_runner.select_square();
+    frequency_control_runner.write_next_num_secs(5);
 
-    // repeat(100) frequency_control_runner.reset();
-    // frequency_control_runner.select_triangle();
-    // frequency_control_runner.write_next_num_secs(5);
+    repeat(100) frequency_control_runner.reset();
+    frequency_control_runner.select_triangle();
+    frequency_control_runner.write_next_num_secs(5);
 
-    // repeat(100) frequency_control_runner.reset();
-    // frequency_control_runner.select_sawtooth();
-    // frequency_control_runner.write_next_num_secs(5);
+    repeat(100) frequency_control_runner.reset();
+    frequency_control_runner.select_sawtooth();
+    frequency_control_runner.write_next_num_secs(5);
 
     frequency_control_runner.close_wav_file();
 
