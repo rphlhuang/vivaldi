@@ -1,8 +1,8 @@
 module nexysVideo (
     input [0:0] sys_clk,
     input [0:0] btnC, // reset
-    input [3:0] sw, // For selecting wave
-    input [3:4] ja, // PMOD connector pins
+    input [7:0] sw, // For selecting wave
+    input [7:4] jb, // PMOD connector pins
     input [3:0] kpyd_row_i,
     output [3:0] kpyd_col_o,
      
@@ -20,15 +20,23 @@ module nexysVideo (
     output [7:0] led
 );
 
+logic clk_12;
+
+clk_wizard pll (
+    .clk_100(sys_clk),
+    .clk_12(clk_12)
+);
+
 wire [7:0] led_temp;
+wire [15:0] div_rate;
 // Rotary Encoder Controls
 wire [4:0] enc_o;
 encoder_debounce
 #()
 (
     .clk(clk_12),
-    .A_i(ja[4]),
-    .B_i(ja[5]),
+    .A_i(jb[4]),
+    .B_i(jb[5]),
     .A_o(A_O),
     .B_o(B_O)
 );
@@ -39,45 +47,67 @@ encoder
     .clk(clk_12),
     .A_i(A_O),
     .B_i(B_O),
-    .BTN_i(ja[6]),
+    .BTN_i(jb[6]),
     .EncPos_o(enc_o),
     .LED_o(led_temp)
 );
 
 wire logic rst_n = btnC;
+wire logic freqy_clk;
 
-logic clk_12;
+wire [3:0] freq;
 
-clk_wizard pll (
-    .clk_100(sys_clk),
-    .clk_12(clk_12)
+kpyd2hex 
+#()
+kpyd_top_inst (
+    .clk(sys_clk),
+    .Row(kpyd_row_i),
+    .Col(kpyd_col_o),
+    .DecodeOut(freq[3:0])
 );
 
-logic clk_48kHz;
-logic [31:0] counter;
-localparam div_factor = 125; // 256 for 12.288 MHz -> 48 kHz
+keypad_decoder
+#()
+decode_inst
+(
+    .clk_i(clk_12),
+    .rst_i(rst_n),
+    .key_value_i(freq),
+    .div_factor_o(div_rate)
+);
 
-always_ff @(posedge clk_12 or posedge rst_n) begin
-    if (rst_n) begin
-        counter <= 0;
-        clk_48kHz <= 0;
-    end else begin
-        if (counter == (div_factor - 1)) begin
-            clk_48kHz <= ~clk_48kHz; // Toggle clock every 256 cycles
-            counter <= 0;
-        end else begin
-            counter <= counter + 1;
-        end
-    end
-end
+wire [0:0] octave_up, octave_down;
+assign octave_up = sw[6];
+assign octave_down = sw[7];
+
+clock_divider
+#()
+divider_inst
+(
+    .clk_i(clk_12),
+    .rst_i(rst_n),
+    .div_factor(div_rate),
+    .clk_out(freqy_clk)
+);
+
+wire [23:0] out_sig_w;
+
+top top_inst (
+    .clk_i(freqy_clk),
+    .rst_i(rst_n),
+    .sw(sw),
+    .kpyd_row_i(kpyd_row_i),
+    .kpyd_col_o(kpyd_col_o),
+    .out_sig_o(out_sig_w),
+    .led()
+);
+
 
 // Audio data busses
 wire [23:0] in_audioL;
 wire [23:0] in_audioR;
 wire [23:0] out_audioL;
 wire [23:0] out_audioR;
-
-wire [23:0] out_sig_w;
 
 codec_init
 #()
@@ -89,19 +119,9 @@ codec_init_inst
     .scl(adau1761_cclk)
 );
 
-top top_inst (
-    .clk_48kHz(clk_48kHz),
-    .rst_i(rst_n),
-    .sw(sw),
-    .kpyd_row_i(kpyd_row_i),
-    .kpyd_col_o(kpyd_col_o),
-    .out_sig_o(out_sig_w),
-    .led(led)
-);
 
-
-assign out_audioL = out_sig_w;
-assign out_audioR = out_sig_w;
+//assign out_audioL = (key_pressed) ? out_sig_w : '0;
+//assign out_audioR = (key_pressed) ? out_sig_w : '0;
 
 assign ac_mclk = clk_12;  
 
@@ -113,7 +133,7 @@ i2s_ctrl_inst
     .RST_I(rst_n),
     .EN_TX_I(1'b1),
     .EN_RX_I(1'b0),
-    .FS_I(4'b0011), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
+    .FS_I(4'b0101), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
     .MM_I(1'b0),
     .D_L_I(out_sig_w),
     .D_R_I(out_sig_w),  // change to whatever wave 
@@ -124,5 +144,9 @@ i2s_ctrl_inst
     .SDATA_O(ac_dac_sdata),
     .SDATA_I(1'b0)
 );
+
+assign led[7:4] = freq;
+assign led[0] = key_pressed;
+assign led[1] = extra;
 
 endmodule

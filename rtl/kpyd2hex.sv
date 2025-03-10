@@ -1,46 +1,144 @@
-module kpyd2hex
-  (input [7:0] kpyd_i, 
-  input clk_i,           
-  input reset_i,
-  output [3:0] hex_o
-  );
+module kpyd2hex(
+    clk,
+    Row,
+    Col,
+    DecodeOut
+    );
 
-  logic [1:0] row;
-  always_comb begin
-    case (kpyd_i[7:4])
-      4'b0001: row = 2'b00; 
-      4'b0010: row = 2'b01;  
-      4'b0100: row = 2'b10;  
-      4'b1000: row = 2'b11;  
-      default: row = 2'b00;  
-    endcase
-  end
+    input clk;						
+    input [3:0] Row;				
+    output [3:0] Col;			
+    output [3:0] DecodeOut;	
 
-  logic [1:0] col;
-  always_comb begin
-    case (kpyd_i[3:0])
-      4'b0001: col = 2'b00;  
-      4'b0010: col = 2'b01;  
-      4'b0100: col = 2'b10;  
-      4'b1000: col = 2'b11;  
-      default: col = 2'b00;  
-    endcase
-  end
 
-  wire [3:0] address = {row, col};
+	// Output wires 
+	reg [3:0] Col;
+	reg [3:0] DecodeOut;
+	
+	// Count register
+	reg [19:0] sclk;
 
-  ram_1r1w_async #(
-    .width_p(4),             
-    .depth_p(16),           
-    .filename_p("kpyd2hex.hex") 
-  ) ram_lut (
-    .clk_i(clk_i),
-    .reset_i(reset_i),
-    .wr_valid_i(1'b0),    
-    .wr_data_i(4'b0),         
-    .wr_addr_i(4'b0),       
-    .rd_addr_i(address),     
-    .rd_data_o(hex_o)        
-  );
+
+	always @(posedge clk) begin
+
+			// 1ms
+			if (sclk == 20'b00011000011010100000) begin
+				//C1
+				Col <= 4'b0111;
+				sclk <= sclk + 1'b1;
+			end
+			
+			// check row pins
+			else if(sclk == 20'b00011000011010101000) begin
+				//R1
+				if (Row == 4'b0111) begin
+					DecodeOut <= 4'b0001;		//1
+				end
+				//R2
+				else if(Row == 4'b1011) begin
+					DecodeOut <= 4'b0100; 		//4
+				end
+				//R3
+				else if(Row == 4'b1101) begin
+					DecodeOut <= 4'b0111; 		//7
+				end
+				//R4
+				else if(Row == 4'b1110) begin
+					DecodeOut <= 4'b0000; 		//0
+				end
+				sclk <= sclk + 1'b1;
+			end
+
+			// 2ms
+			else if(sclk == 20'b00110000110101000000) begin
+				//C2
+				Col<= 4'b1011;
+				sclk <= sclk + 1'b1;
+			end
+			
+			// check row pins
+			else if(sclk == 20'b00110000110101001000) begin
+				//R1
+				if (Row == 4'b0111) begin
+					DecodeOut <= 4'b0010; 		//2
+				end
+				//R2
+				else if(Row == 4'b1011) begin
+					DecodeOut <= 4'b0101; 		//5
+				end
+				//R3
+				else if(Row == 4'b1101) begin
+					DecodeOut <= 4'b1000; 		//8
+				end
+				//R4
+				else if(Row == 4'b1110) begin
+					DecodeOut <= 4'b1111; 		//F
+				end
+				sclk <= sclk + 1'b1;
+			end
+
+			//3ms
+			else if(sclk == 20'b01001001001111100000) begin
+				//C3
+				Col<= 4'b1101;
+				sclk <= sclk + 1'b1;
+			end
+			
+			// check row pins
+			else if(sclk == 20'b01001001001111101000) begin
+				//R1
+				if(Row == 4'b0111) begin
+					DecodeOut <= 4'b0011; 		//3	
+				end
+				//R2
+				else if(Row == 4'b1011) begin
+					DecodeOut <= 4'b0110; 		//6
+				end
+				//R3
+				else if(Row == 4'b1101) begin
+					DecodeOut <= 4'b1001; 		//9
+				end
+				//R4
+				else if(Row == 4'b1110) begin
+					DecodeOut <= 4'b1110; 		//E
+				end
+
+				sclk <= sclk + 1'b1;
+			end
+
+			//4ms
+			else if(sclk == 20'b01100001101010000000) begin
+				//C4
+				Col<= 4'b1110;
+				sclk <= sclk + 1'b1;
+			end
+
+			// Check row pins
+			else if(sclk == 20'b01100001101010001000) begin
+				//R1
+				if(Row == 4'b0111) begin
+					DecodeOut <= 4'b1010; //A
+				end
+				//R2
+				else if(Row == 4'b1011) begin
+					DecodeOut <= 4'b1011; //B
+				end
+				//R3
+				else if(Row == 4'b1101) begin
+					DecodeOut <= 4'b1100; //C
+				end
+				//R4
+				else if(Row == 4'b1110) begin
+					DecodeOut <= 4'b1101; //D
+				end
+				sclk <= 20'b00000000000000000000;
+			end
+
+			// Otherwise increment
+			else begin
+				sclk <= sclk + 1'b1;
+			end
+			
+	end
 
 endmodule
