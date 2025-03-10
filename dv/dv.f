@@ -1,14 +1,16 @@
-
-dv/dv_pkg.sv
-
-dv/vivaldi_tb.sv
-dv/vivaldi_runner.sv
+dv/frequency_control_runner.sv
+dv/frequency_control_tb.sv
 
 dv/top_tb.sv
 dv/top_runner.sv
 
 dv/wav_utils/wavewriter.sv
 dv/wav_utils/fileutil.cpp
+
+dv/amp_modulator_tb.sv
+dv/amp_modulator_runner.sv
+dv/adsr_envelope_tb.sv
+dv/adsr_envelope_runner.sv
 
 --timing
 -j 0

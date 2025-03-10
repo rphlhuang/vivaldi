@@ -66,9 +66,39 @@ kpyd_top_inst (
     .DecodeOut(freq[3:0])
 );
 
+<<<<<<< HEAD
 keypad_decoder
 #()
 decode_inst
+=======
+
+// Wave clock generation
+logic clk_48kHz;
+logic [31:0] counter;
+localparam div_factor = 128; // 256 for 12.288 MHz -> 48 kHz
+
+always_ff @(posedge clk_12 or posedge rst_n) begin
+    if (rst_n) begin
+        counter <= 0;
+        clk_48kHz <= 0;
+    end else begin
+        if (counter == (div_factor - 1)) begin
+            clk_48kHz <= ~clk_48kHz; // Toggle clock every 256 cycles
+            counter <= 0;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+end
+
+// Wave initializations
+wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w;
+logic [23:0] out_sig_l;
+
+sinusoid
+#(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
+sine_wave_inst
+>>>>>>> main
 (
     .clk_i(clk_12),
     .rst_i(rst_n),

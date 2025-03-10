@@ -7,14 +7,15 @@
 #include <algorithm>
 
 
+// global output file stream (for simplicity)
+std::ofstream g_out;
+int g_dataBytesWritten = 0;
+
 extern "C" {
 
-    // global output file stream (for simplicity)
-    std::ofstream g_out;
-    int g_dataBytesWritten = 0;
 
     // open a file for binary writing; returns true if successful
-    int open_file(const std::string &filename) {
+    int open_file(const char * filename) {
         g_out.open(filename, std::ios::binary | std::ios::out);
         if (!g_out.is_open()) {
             std::cerr << "Error: could not open file " << filename << "\n";

@@ -28,6 +28,37 @@ set_property -dict [list \
   CONFIG.USE_RESET {false} \
 ] [get_ips clk_wizard]
 
+#dsp48e1 ip macro, tcl log generated from vivado ip catalog
+create_ip -name dsp_macro -vendor xilinx.com -library ip -version 1.0 -module_name xbip_dsp48_macro_0
+set_property -dict [list \
+CONFIG.instruction1 {B*(A+D)} \
+CONFIG.pipeline_options {By_Tier} \
+CONFIG.tier_3 {true} \
+CONFIG.dreg_3 {true} \
+CONFIG.areg_3 {true} \
+CONFIG.areg_4 {false} \
+CONFIG.breg_3 {true} \
+CONFIG.breg_4 {false} \
+CONFIG.creg_3 {false} \
+CONFIG.creg_4 {false} \
+CONFIG.creg_5 {false} \
+CONFIG.mreg_5 {false} \
+CONFIG.preg_6 {false} \
+CONFIG.d_width {18} \
+CONFIG.d_binarywidth {0} \
+CONFIG.a_width {18} \
+CONFIG.a_binarywidth {0} \
+CONFIG.b_width {18} \
+CONFIG.b_binarywidth {0} \
+CONFIG.concat_width {48} \
+CONFIG.concat_binarywidth {0} \
+CONFIG.c_binarywidth {0} \
+CONFIG.pcin_binarywidth {0} \
+CONFIG.p_full_width {36} \
+CONFIG.p_width {36} \
+CONFIG.p_binarywidth {0} \
+] [get_ips xbip_dsp48_macro_0]
+
 
 # Run Synthesis
 set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]
