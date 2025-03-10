@@ -1,6 +1,9 @@
 dv/frequency_control_runner.sv
 dv/frequency_control_tb.sv
 
+dv/top_tb.sv
+dv/top_runner.sv
+
 dv/wav_utils/wavewriter.sv
 dv/wav_utils/fileutil.cpp
 

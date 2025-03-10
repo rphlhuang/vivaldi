@@ -1,5 +1,5 @@
 
-TOP := frequency_control_tb
+TOP := top_tb
 
 export YOSYS_DATDIR := $(shell yosys-config --datdir)
 
