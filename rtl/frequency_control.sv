@@ -1,107 +1,87 @@
 module frequency_control
- #(parameter width_p = 12,
-    parameter clk_freq_p = 12_000_000 //frequency of clock input defaults to 12MHz
-   )
+ #(parameter width_p = 24)
   (input [0:0] clk_i,
    input [0:0] reset_i,
-   input [15:0] freq_ctrl_i, // output frequency (20 Hz - 20 kHz range)
-   input [3:0] sw_i,
-   input [0:0] ready_i,
-   output signed [width_p-1:0] data_o,
-   output [0:0] valid_o
+   input [4:0] sw_i,
+   output signed [width_p-1:0] data_o
    );
-    localparam wave_std_freq_lp = 440;
-    localparam sample_size_lp = 300;
-    logic [15:0] clk_div_l;
-    logic [15:0] clk_slow_counter_l;
 
-    wire [width_p-1:0] sinusoid_data_o, square_data_o, triangle_data_o, sawtooth_data_o;
-    logic [width_p-1:0] data_ol;
+    localparam SAMPLING_FREQ = 48 * (10 ** 3);
+    localparam wave_std_freq_lp = 440.0;
 
-    // calculate clock div when the freq_ctrl_i input changes
-    always_comb begin
-        if(reset_i) begin
-            clk_div_l = '0;
-        end
-        else begin
-            clk_div_l = clk_freq_p/(sample_size_lp*freq_ctrl_i);
-        end
-    end
-
-
-    // cc counter to slow wave data to desired frequency
-    always_ff @(posedge clk_i) begin
-        if(reset_i || (clk_slow_counter_l >= clk_div_l)) begin
-            clk_slow_counter_l <= '0;
-        end 
-        else begin
-            clk_slow_counter_l <= clk_slow_counter_l + 1;
-        end
-    end
-
+    wire signed [width_p-1:0] sinusoid_data_o, square_data_o, triangle_data_o, sawtooth_data_o, noise_data_o;
+    logic signed [width_p-1:0] data_ol;
 
     sinusoid_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.sampling_freq_p(SAMPLING_FREQ)
    ,.note_freq_p(wave_std_freq_lp)
    )
    sinusoid_inst 
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i((clk_slow_counter_l === clk_div_l))
+  ,.ready_i(sw_i[0])
   ,.data_o(sinusoid_data_o)
   ,.valid_i(1'b1)
   ,.valid_o());
 
     square_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.sampling_freq_p(SAMPLING_FREQ)
    ,.note_freq_p(wave_std_freq_lp)
    )
    square_inst
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i( (clk_slow_counter_l === clk_div_l))
+  ,.ready_i(sw_i[1])
     ,.valid_i(1'b1)
   ,.data_o(square_data_o)
   ,.valid_o());
 
     triangle_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.sampling_freq_p(SAMPLING_FREQ)
    ,.note_freq_p(wave_std_freq_lp)
    )
    triangle_inst
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i((clk_slow_counter_l === clk_div_l))
+  ,.ready_i(sw_i[2])
   ,.data_o(triangle_data_o)
   ,.valid_i(1'b1)
   ,.valid_o());    
 
 
     sawtooth_wave #(.width_p(width_p)
-   ,.sampling_freq_p(sample_size_lp*wave_std_freq_lp)
+   ,.sampling_freq_p(SAMPLING_FREQ)
    ,.note_freq_p(wave_std_freq_lp)
    )
    sawtooth_inst
   (.clk_i(clk_i)
   ,.reset_i(reset_i)
-  ,.ready_i((clk_slow_counter_l === clk_div_l))
+  ,.ready_i(sw_i[3])
   ,.data_o(sawtooth_data_o)
   ,.valid_i(1'b1)
   ,.valid_o());
 
+  noise_gen
+  #()
+  noise_inst
+  (
+    .clk_i(clk_i),
+    .rst_i(reset_i),
+    .noise_o(noise_data_o)
+  );
+
 
 always_comb begin
     case (sw_i)
-        4'b0001: data_ol = sinusoid_data_o;
-        4'b0010: data_ol = square_data_o;
-        4'b0100: data_ol = triangle_data_o;
-        4'b1000: data_ol = sawtooth_data_o;
+        5'b00001: data_ol = sinusoid_data_o;
+        5'b00010: data_ol = square_data_o;
+        5'b00100: data_ol = triangle_data_o;
+        5'b01000: data_ol = sawtooth_data_o;
+        5'b10000: data_ol = noise_data_o;
         default: data_ol = '0;
     endcase
 end
 
 assign data_o = data_ol;
-assign valid_o = 1'b1;
-
 
 endmodule

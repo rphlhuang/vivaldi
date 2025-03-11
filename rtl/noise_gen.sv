@@ -4,7 +4,7 @@ module noise_gen
 (
     input [0:0] clk_i,
     input [0:0] rst_i,
-    output [23:0] noise_o
+    output signed [23:0] noise_o
 );
 
     // 24-bit LFSR with tap bits at positions 0, 2, 3, and 23

@@ -2,7 +2,8 @@ module nexysVideo (
     input [0:0] sys_clk,
     input [0:0] btnC, // reset
     input [7:0] sw, // For selecting wave
-    input [7:4] jb, // PMOD connector pins
+    input [7:4] JB_i, // PMOD connector pins
+    input [7:4] JC_i,
     input [3:0] kpyd_row_i,
     output [3:0] kpyd_col_o,
      
@@ -21,123 +22,74 @@ module nexysVideo (
 );
 
 logic clk_12;
+wire signed [23:0] soundwave_o, out_sig_w, synth_sound_o;
 
 clk_wizard pll (
     .clk_100(sys_clk),
     .clk_12(clk_12)
 );
 
-wire [7:0] led_temp;
-wire [15:0] div_rate;
-// Rotary Encoder Controls
-wire [4:0] enc_o;
-encoder_debounce
+// Attack Encoder
+wire [4:0] attack_factor_o, release_factor_o;
+
+encoder_top
 #()
+jb_encoder_inst
 (
-    .clk(clk_12),
-    .A_i(jb[4]),
-    .B_i(jb[5]),
-    .A_o(A_O),
-    .B_o(B_O)
+  .clk_i(clk_12),
+  .jcon_i(JB_i),
+  .encPos_o(attack_factor_o),
+  .led(led[7:4])
 );
 
-encoder
+// Release Encoder
+encoder_top
 #()
+jc_encoder_inst
 (
-    .clk(clk_12),
-    .A_i(A_O),
-    .B_i(B_O),
-    .BTN_i(jb[6]),
-    .EncPos_o(enc_o),
-    .LED_o(led_temp)
+  .clk_i(clk_12),
+  .jcon_i(JC_i),
+  .encPos_o(release_factor_o),
+  .led(led[3:0])
 );
 
-wire logic rst_n = btnC;
-wire logic freqy_clk;
+wire rst_n = btnC;
+wire [0:0] freqy_clk;
 
-wire [3:0] freq;
-
-kpyd2hex 
+kypd_select
 #()
-kpyd_top_inst (
-    .clk(sys_clk),
-    .Row(kpyd_row_i),
-    .Col(kpyd_col_o),
-    .DecodeOut(freq[3:0])
-);
-
-<<<<<<< HEAD
-keypad_decoder
-#()
-decode_inst
-=======
-
-// Wave clock generation
-logic clk_48kHz;
-logic [31:0] counter;
-localparam div_factor = 128; // 256 for 12.288 MHz -> 48 kHz
-
-always_ff @(posedge clk_12 or posedge rst_n) begin
-    if (rst_n) begin
-        counter <= 0;
-        clk_48kHz <= 0;
-    end else begin
-        if (counter == (div_factor - 1)) begin
-            clk_48kHz <= ~clk_48kHz; // Toggle clock every 256 cycles
-            counter <= 0;
-        end else begin
-            counter <= counter + 1;
-        end
-    end
-end
-
-// Wave initializations
-wire [23:0] sine_out_w, square_out_w, tri_out_w, saw_out_w;
-logic [23:0] out_sig_l;
-
-sinusoid
-#(.width_p(24), .sampling_freq_p(48 * 10 ** 3), .note_freq_p(440.0))
-sine_wave_inst
->>>>>>> main
+kypd_select_inst
 (
-    .clk_i(clk_12),
-    .rst_i(rst_n),
-    .key_value_i(freq),
-    .div_factor_o(div_rate)
+  .clk_i(sys_clk),
+  .clk_12(clk_12),
+  .rst_i(rst_n),
+  .kpyd_row_i(kpyd_row_i),
+  .kpyd_col_o(kpyd_col_o),
+  .freqy_clk_o(freqy_clk)
 );
 
-wire [0:0] octave_up, octave_down;
-assign octave_up = sw[6];
-assign octave_down = sw[7];
-
-clock_divider
-#()
-divider_inst
+frequency_control
+#(.width_p(24))
+freq_ctrl_inst
 (
-    .clk_i(clk_12),
-    .rst_i(rst_n),
-    .div_factor(div_rate),
-    .clk_out(freqy_clk)
+  .clk_i(freqy_clk),
+  .reset_i(rst_n),
+  .sw_i(sw),
+  .data_o(out_sig_w)
 );
 
-wire [23:0] out_sig_w;
-
-top top_inst (
-    .clk_i(freqy_clk),
-    .rst_i(rst_n),
-    .sw(sw),
-    .kpyd_row_i(kpyd_row_i),
-    .kpyd_col_o(kpyd_col_o),
-    .out_sig_o(out_sig_w),
-    .led()
+envelope_generator
+#(.DATA_WIDTH(24))
+envelope_gen_inst
+(
+  .clk_pll_12_28_i(clk_12),
+  .rst_i(rst_n),
+  .signal_i(out_sig_w),
+  .attack_factor_i(attack_factor_o),
+  .release_time_i(release_factor_o),
+  .sw_i(sw[4:0]),
+  .top_synth_o(synth_sound_o)
 );
-
-
-// Audio data busses
-wire [23:0] in_audioL;
-wire [23:0] in_audioR;
-wire [23:0] out_audioL;
-wire [23:0] out_audioR;
 
 codec_init
 #()
@@ -150,11 +102,6 @@ codec_init_inst
 );
 
 
-//assign out_audioL = (key_pressed) ? out_sig_w : '0;
-//assign out_audioR = (key_pressed) ? out_sig_w : '0;
-
-assign ac_mclk = clk_12;  
-
 i2s_ctrl
 #()
 i2s_ctrl_inst
@@ -165,8 +112,8 @@ i2s_ctrl_inst
     .EN_RX_I(1'b0),
     .FS_I(4'b0101), // div rate of 4, clock rate of 12.288 should result in 48 khz sample rate
     .MM_I(1'b0),
-    .D_L_I(out_sig_w),
-    .D_R_I(out_sig_w),  // change to whatever wave 
+    .D_L_I(synth_sound_o),
+    .D_R_I(synth_sound_o),  // change to whatever wave 
     .D_L_O(),
     .D_R_O(),
     .BCLK_O(ac_bclk),
@@ -174,9 +121,5 @@ i2s_ctrl_inst
     .SDATA_O(ac_dac_sdata),
     .SDATA_I(1'b0)
 );
-
-assign led[7:4] = freq;
-assign led[0] = key_pressed;
-assign led[1] = extra;
 
 endmodule
