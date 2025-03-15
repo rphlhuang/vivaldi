@@ -8,7 +8,7 @@ module kpyd2hex(
     input clk;						
     input [3:0] Row;				
     output [3:0] Col;			
-    output [3:0] DecodeOut;	
+    output [3:0] DecodeOut;
 
 
 	// Output wires 
@@ -102,7 +102,6 @@ module kpyd2hex(
 				else if(Row == 4'b1110) begin
 					DecodeOut <= 4'b1110; 		//E
 				end
-
 				sclk <= sclk + 1'b1;
 			end
 

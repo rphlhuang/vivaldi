@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-
 module adsr_envelope #(
     parameter DATA_WIDTH = 16
     //parameter ATTACK_TIME = 100,//clk cycles

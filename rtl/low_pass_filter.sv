@@ -48,7 +48,7 @@ elastic_inst
    .ready_o(ready_o),
    .valid_o(valid_o),
    .data_o(data_o),
-   .ready_i(ready_o)
+   .ready_i(ready_i)
   );
 
 

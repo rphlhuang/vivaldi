@@ -1,15 +1,16 @@
 module kypd_select(
-    input clk_i,
     input clk_12,
     input rst_i,
     input [3:0] kpyd_row_i,
 
     output [3:0] kpyd_col_o,
-    output logic freqy_clk_o
+    output logic freqy_clk_o,
+    output [0:0] noise_o
 );
 
 wire [3:0] freq;
 wire [15:0] div_rate;
+
 
 /* ADD OCTAVE SELECT SOMEWHERE
 
@@ -22,10 +23,10 @@ assign octave_down = sw[7];
 kpyd2hex 
 #()
 kpyd_top_inst (
-    .clk(clk_i),
+    .clk(clk_12),
     .Row(kpyd_row_i),
     .Col(kpyd_col_o),
-    .DecodeOut(freq[3:0])
+    .DecodeOut(freq)
 );
 
 keypad_decoder
@@ -35,7 +36,8 @@ decode_inst
     .clk_i(clk_12),
     .rst_i(rst_i),
     .key_value_i(freq),
-    .div_factor_o(div_rate)
+    .div_factor_o(div_rate),
+    .noise_en_o(noise_o)
 );
 
 clock_divider

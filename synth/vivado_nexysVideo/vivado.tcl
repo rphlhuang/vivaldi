@@ -59,7 +59,6 @@ CONFIG.p_width {36} \
 CONFIG.p_binarywidth {0} \
 ] [get_ips xbip_dsp48_macro_0]
 
-
 # Run Synthesis
 set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]
 launch_runs synth_1 -jobs 4

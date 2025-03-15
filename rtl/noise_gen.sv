@@ -23,6 +23,6 @@ module noise_gen
         end
     end
 
-    assign noise_o = lfsr_l;
+    assign noise_o = lfsr_l[23:8];
 
 endmodule
