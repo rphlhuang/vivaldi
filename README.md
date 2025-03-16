@@ -1,7 +1,10 @@
 
 # Vivaldi
 
-A mini FPGA synthesizer built for the [Nexys Video Artix-7 FPGA](https://digilent.com/reference/programmable-logic/nexys-video/start?redirect=1) from Digilent.
+A mini FPGA synthesizer built for the [Nexys Video Artix-7 FPGA](https://digilent.com/reference/programmable-logic/nexys-video/start?redirect=1) from Digilent. Contains 4 oscillators (sine, square, sawtooth, triangle), an envelope generator, an amplitude modulator, and a top module that accepts [encoder](https://digilent.com/shop/pmod-enc-rotary-encoder/?srsltid=AfmBOoo1wKf2iMx46q_8YFrvncR6rilzPuZqXuqj_DP1sRqSlVcLAPNx) inputs from the attack and delay parameters of the envelope, as well as a [keypad](https://digilent.com/shop/pmod-kypd-16-button-keypad/?srsltid=AfmBOopqdB8xALTOwe-Yw8rOTSu3CqQDX95_Dyj0c3LvjP7ewICEGAvx) input that controls the frequency of the output signal.
+
+- Run testbench: `make sim`
+- Run synthesis, implementation, and upload to Nexys Video: 
 
 ## Vivado Notes
 
@@ -23,4 +26,3 @@ A mini FPGA synthesizer built for the [Nexys Video Artix-7 FPGA](https://digilen
 - .wav testbench
   - Reading .wav using DPI-C: [https://www.rtlaudiolab.com/009-reading-wave-files-in-systemverilog/](https://www.rtlaudiolab.com/009-reading-wave-files-in-systemverilog/)
   - Wave format specifics: [http://soundfile.sapp.org/doc/WaveFormat/](http://soundfile.sapp.org/doc/WaveFormat/)
--
