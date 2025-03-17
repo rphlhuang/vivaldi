@@ -14,9 +14,10 @@ A mini FPGA synthesizer built for the [Nexys Video Artix-7 FPGA](https://digilen
  
 ## Programming onto the Nexys Video Board
 If you want to test this project on your own nexys video board you can do so easily by making use of the provided TCL script in a few short steps.\
-1. Clone the repo\
-2. Navigate to the `synth/vivado_nexysVideo/build` directory\
-3. In the terminal, run `vivado -mode batch -source ../vivado.tcl`\
+1. Clone the repo
+2. Navigate to the `synth/vivado_nexysVideo/build` directory
+3. In the terminal, run `vivado -mode batch -source ../vivado.tcl`
+
 The TCL script will then open a new Vivado project, add all relevant files, and run everything from synthesis to generating the bitstream and will automatically program the connected board. The provided RTL is configured to have the PMOD keyboard in the JA PMOD slot and encoders in the JB and JC PMOD connectors, but this can be easily changed in the constraint file if needed.
 
 ## General Notes
